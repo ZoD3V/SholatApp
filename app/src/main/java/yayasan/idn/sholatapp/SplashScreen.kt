@@ -17,7 +17,7 @@ import com.google.android.gms.location.*
 import java.util.*
 
 class SplashScreen : AppCompatActivity() {
-    lateinit var mfusedlocation:FusedLocationProviderClient
+    private lateinit var mfusedlocation:FusedLocationProviderClient
     private var myRequestCode = 1010
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

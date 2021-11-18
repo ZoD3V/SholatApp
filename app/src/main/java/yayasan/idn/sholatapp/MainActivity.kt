@@ -1,6 +1,7 @@
 package yayasan.idn.sholatapp
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,13 +29,16 @@ class MainActivity : AppCompatActivity() {
         // Request a string response from the provided URL.
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, url,null,
-            Response.Listener { response ->
+            { response ->
+                println(response)
                 setValues(response)
             },
-            Response.ErrorListener { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
+            { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
+        queue.cache.clear()
         queue.add(jsonRequest)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setValues(response: JSONObject) {
         city.text = response.getString("name")
         weather.text=response.getJSONArray("weather").getJSONObject(0).getString("main")
