@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun setValues(response: JSONObject) {
         city.text = response.getString("name")
-        weather.text=response.getJSONArray("weather").getJSONObject(0).getString("main")
+        weather.text=response.getJSONArray("weather").getJSONObject(0).getString("description")
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
