@@ -10,11 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
-import java.util.*
+
 
 class SplashScreen : AppCompatActivity() {
     private lateinit var mfusedlocation:FusedLocationProviderClient
@@ -43,6 +42,7 @@ class SplashScreen : AppCompatActivity() {
                             val intent = Intent(this,MainActivity::class.java)
                             intent.putExtra("lat",location.latitude.toString())
                             intent.putExtra("long",location.longitude.toString())
+                            intent.putExtra("el",location.altitude.toString())
                             startActivity(intent)
                             finish()
                         },2000)
