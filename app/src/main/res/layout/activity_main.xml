@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -108,9 +107,9 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="679dp"
+            android:layout_height="670dp"
             android:background="@drawable/rounded_home"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,9 +126,11 @@
                     android:layout_height="95dp"
                     android:background="@drawable/list_shalat"
                     android:layout_marginTop="60dp"
-
                     android:layout_marginBottom="60px">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -161,7 +162,7 @@
                     android:layout_marginBottom="60px">
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
 <!--    </com.google.android.material.card.MaterialCardView>-->
 

@@ -4,12 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
     tools:context=".SplashScreen">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:layout_centerInParent="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/backslash"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="10"
+            android:text="pantau Shalat &amp; cuaca \n didaerahmu"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
+    </LinearLayout>
 
 </RelativeLayout>
