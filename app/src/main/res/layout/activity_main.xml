@@ -50,9 +50,10 @@
                 android:layout_height="200px"
                 android:src="@drawable/clody" />
                 <TextView
+                    android:id="@+id/temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30°"
+                    android:text="--°"
                     android:layout_marginLeft="25dp"
                     android:layout_gravity="center"
                     android:textSize="50dp"
@@ -65,9 +66,10 @@
                     />
             </LinearLayout>
             <TextView
+                android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bogor"
+                android:text="-----"
                 android:textStyle="bold"
                 android:textSize="25dp"
                 android:textColor="@color/white"
@@ -77,9 +79,10 @@
                 android:shadowRadius="8"
                 />
             <TextView
+                android:id="@+id/weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cloudy"
+                android:text="-----"
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:textColor="@color/white"
