@@ -8,72 +8,80 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="412dp"
-        android:layout_height="250dp"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+
+        android:background="@drawable/weather"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/weather">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
-            >
+            android:orientation="vertical">
+
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-            <ImageView
-                android:layout_width="200px"
-                android:layout_height="200px"
-                android:src="@drawable/clody" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200px"
+                    android:layout_height="200px"
+                    android:src="@drawable/clody" />
+
                 <TextView
                     android:id="@+id/temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--°"
-                    android:layout_marginLeft="25dp"
                     android:layout_gravity="center"
-                    android:textSize="50dp"
-                    android:textColor="@color/white"
+                    android:layout_marginLeft="25dp"
                     android:shadowColor="@color/shadow"
                     android:shadowDx="0"
                     android:shadowDy="5"
                     android:shadowRadius="8"
+                    android:text="--°"
+                    android:layout_weight="2"
+                    android:textColor="@color/white"
+                    android:textSize="50dp"
 
                     />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/settings"/>
             </LinearLayout>
+
             <TextView
                 android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-----"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/white"
                 android:shadowColor="@color/shadow"
                 android:shadowDx="0"
                 android:shadowDy="3"
                 android:shadowRadius="8"
-                />
+                android:text="-----"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-----"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:textColor="@color/white"
                 android:shadowColor="@color/shadow"
                 android:shadowDx="0"
                 android:shadowDy="3"
                 android:shadowRadius="8"
-                />
+                android:text="-----"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 
@@ -82,73 +90,274 @@
             android:layout_height="wrap_content" />
     </FrameLayout>
 
-<!--    <com.google.android.material.card.MaterialCardView-->
-<!--        android:id="@+id/materialCardView"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="679dp"-->
-<!--        app:cardCornerRadius="65dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
+    <!--    <com.google.android.material.card.MaterialCardView-->
+    <!--        android:id="@+id/materialCardView"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="679dp"-->
+    <!--        app:cardCornerRadius="65dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
 
-        <androidx.core.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        android:background="@drawable/rounded_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="670dp"
-            android:background="@drawable/rounded_home"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="25dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="25dp">
+                android:layout_height="95dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:background="@drawable/list_shalat"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginBottom="60px">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/shubuh" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Shubuh"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:background="@drawable/list_shalat"
-                    android:layout_marginBottom="60px">
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:background="@drawable/list_shalat"
-                    android:layout_marginBottom="60px">
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:background="@drawable/list_shalat"
-                    android:layout_marginBottom="60px">
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="95dp"
-                    android:background="@drawable/list_shalat"
-                    android:layout_marginBottom="60px">
-                </LinearLayout>
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
 
-<!--    </com.google.android.material.card.MaterialCardView>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dhuha" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Dhuha"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dzuhur" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Dzuhur"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ashar" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Ashar"
+                    android:textColor="@color/white"
+                    android:textSize="21dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/maghrib" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Maghrib"
+                    android:textColor="@color/white"
+                    android:textSize="21dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:padding="20dp"
+                android:background="@drawable/list_shalat">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/isya" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu Isya"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="04:20"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginBottom="60px"
+                android:background="@drawable/list_shalat"></LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!--    </com.google.android.material.card.MaterialCardView>-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -181,7 +390,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_begin="293dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-1dp" />
 
     <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
