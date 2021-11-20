@@ -1,26 +1,62 @@
 package yayasan.idn.sholatapp
 
-
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.location.Geocoder
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
-
+import java.time.LocalDate
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
+    @SuppressLint("SimpleDateFormat", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //hide status bar
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.apply {
+            // Hide both the navigation bar and the status bar.
+            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+            // a general rule, you should design your app to hide the status bar whenever you
+            // hide the navigation bar.
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        }
         val lat = intent.getStringExtra("lat")
         val long = intent.getStringExtra("long")
         val el = intent.getStringExtra("el")
+
         getWeather(lat,long)
         getSholat(lat,long,el)
+
+        //show day
+        val day = LocalDate.now().dayOfWeek.name
+        val month = LocalDate.now().month.name
+        val year = LocalDate.now().year
+        tanggal.text = "$day, $month $year"
+
+        //change theme
+        switchTheme.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked){
+                frameLayout.setBackgroundResource(R.drawable.bg_splash)
+                sholatshubuh.setBackgroundResource(R.drawable.weather)
+            }else{
+                frameLayout.setBackgroundResource(R.drawable.weather)
+                sholatshubuh.setBackgroundResource(R.drawable.list_shalat)
+            }
+        }
     }
 
     private fun getSholat(lat: String?,long: String?,el:String?){
@@ -29,23 +65,38 @@ class MainActivity : AppCompatActivity() {
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlSholat,null,
             { response ->
-                println(response)
-//                setValuesSholat(response)
+                setValuesSholat(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
         queue.cache.clear()
         queue.add(jsonRequest)
     }
 
-//    private fun setValuesSholat(response: JSONObject) {
-//        shubuh.text = response.getJSONObject("results").getJSONArray("datetime").getJSONObject(0).getJSONObject("times").getString("Fajr")
-//
-//    }
+    private fun setValuesSholat(response: JSONObject) {
+        shubuh.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Fajr")
+
+        dhuha.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Sunrise")
+
+        dzuhur.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Dhuhr")
+
+        ashar.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Asr")
+
+        maghrib.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Maghrib")
+
+        isya.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Isha")
+    }
 
     private fun getWeather(lat: String?, long: String?) {
-        val APIKEY = "732059b1c20f74eee6738e66b90b1997"
+
+        val apiKey = "732059b1c20f74eee6738e66b90b1997"
         val queue = Volley.newRequestQueue(this)
-        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIKEY}"
+        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}"
         // Request a string response from the provided URL.
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
@@ -65,6 +116,5 @@ class MainActivity : AppCompatActivity() {
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
-
     }
 }

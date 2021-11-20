@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
@@ -13,19 +15,18 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import java.util.*
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     private lateinit var mfusedlocation:FusedLocationProviderClient
     private var myRequestCode = 1010
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
         mfusedlocation = LocationServices.getFusedLocationProviderClient(this)
-
         getLastLocation()
-
     }
 
     @SuppressLint("MissingPermission")
@@ -35,6 +36,8 @@ class SplashScreen : AppCompatActivity() {
                 mfusedlocation.lastLocation.addOnCompleteListener {
                     task ->
                     var location:Location? = task.result
+                    var geocoder = Geocoder(this)
+                    var addreses:List<Address>
                     if (location == null){
                         NewLocation()
                     }else{
