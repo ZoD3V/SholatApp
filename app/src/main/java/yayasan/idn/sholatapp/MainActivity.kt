@@ -51,8 +51,23 @@ class MainActivity : AppCompatActivity() {
         switchTheme.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 frameLayout.setBackgroundResource(R.drawable.weather_rain)
+                rounded_home.setBackgroundResource(R.drawable.rounded_home_dark)
+                list_shalat1.setBackgroundResource(R.drawable.list_shalat_dark)
+                list_shalat2.setBackgroundResource(R.drawable.list_shalat_dark)
+                list_shalat3.setBackgroundResource(R.drawable.list_shalat_dark)
+                list_shalat4.setBackgroundResource(R.drawable.list_shalat_dark)
+                list_shalat5.setBackgroundResource(R.drawable.list_shalat_dark)
+                list_shalat6.setBackgroundResource(R.drawable.list_shalat_dark)
+
             }else{
                 frameLayout.setBackgroundResource(R.drawable.weather)
+                rounded_home.setBackgroundResource(R.drawable.rounded_home)
+                list_shalat1.setBackgroundResource(R.drawable.list_shalat)
+                list_shalat2.setBackgroundResource(R.drawable.list_shalat)
+                list_shalat3.setBackgroundResource(R.drawable.list_shalat)
+                list_shalat4.setBackgroundResource(R.drawable.list_shalat)
+                list_shalat5.setBackgroundResource(R.drawable.list_shalat)
+                list_shalat6.setBackgroundResource(R.drawable.list_shalat)
             }
         }
     }

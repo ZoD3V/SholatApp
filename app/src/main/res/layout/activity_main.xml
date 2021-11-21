@@ -99,6 +99,7 @@
     <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/rounded_home"
         android:layout_width="match_parent"
         android:layout_height="670dp"
         android:background="@drawable/rounded_home"
@@ -113,6 +114,7 @@
             android:padding="25dp">
 
             <LinearLayout
+                android:id="@+id/list_shalat1"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:layout_marginTop="55dp"
@@ -159,6 +161,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/list_shalat2"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:elevation="5dp"
@@ -202,6 +205,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/list_shalat3"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:elevation="5dp"
@@ -245,6 +249,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/list_shalat4"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:elevation="5dp"
@@ -287,6 +292,7 @@
                     android:textSize="20dp" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/list_shalat5"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:elevation="5dp"
@@ -329,6 +335,7 @@
                     android:textSize="20dp" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/list_shalat6"
                 android:layout_width="match_parent"
                 android:elevation="5dp"
                 android:layout_height="95dp"
@@ -384,7 +391,7 @@
         android:elevation="15dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        app:cardCornerRadius="25dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
