@@ -113,13 +113,12 @@
             android:padding="25dp">
 
             <LinearLayout
-                android:id="@+id/sholatshubuh"
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
                 android:layout_marginTop="55dp"
                 android:layout_marginBottom="60px"
-                android:padding="20dp"
                 android:elevation="5dp"
+                android:padding="20dp"
                 android:background="@drawable/list_shalat">
 
                 <ImageView
@@ -131,9 +130,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Waktu Shubuh"
+                    android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="22dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="19dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
@@ -146,14 +146,14 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/shubuh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:fontFamily="@font/semibold"
+                    android:text="04:20"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
 
             </LinearLayout>
 
@@ -173,9 +173,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Waktu Dhuha"
+                    android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="22dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
@@ -188,19 +189,18 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/dhuha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/semibold"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:text="04:20"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-
                 android:layout_height="95dp"
                 android:elevation="5dp"
                 android:layout_marginBottom="60px"
@@ -216,7 +216,8 @@
                     android:layout_height="wrap_content"
                     android:text="Waktu Dzuhur"
                     android:textColor="@color/white"
-                    android:textSize="22dp"
+                    android:fontFamily="@font/semibold"
+                    android:textSize="20dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
@@ -230,14 +231,14 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/dzuhur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:text="04:20"
+                    android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -256,8 +257,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Waktu Ashar"
+                    android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="21dp"
+                    android:textSize="20dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
@@ -271,14 +273,14 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/ashar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:fontFamily="@font/semibold"
+                    android:text="04:20"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -297,10 +299,11 @@
                     android:layout_height="wrap_content"
                     android:text="Waktu Maghrib"
                     android:textColor="@color/white"
-                    android:textSize="21dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="19dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/semibold"
+                    android:layout_marginRight="19dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -311,14 +314,14 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/maghrib"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:fontFamily="@font/semibold"
+                    android:text="04:20"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -337,11 +340,12 @@
                     android:layout_height="wrap_content"
                     android:text="Waktu Isya"
                     android:textColor="@color/white"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/semibold"
                     android:textAlignment="center"/>
                 <View
                     android:layout_width="1dp"
@@ -351,23 +355,15 @@
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:id="@+id/isya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="--:--"
+                    android:fontFamily="@font/semibold"
+                    android:text="04:20"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:elevation="5dp"
-                android:layout_height="95dp"
-                android:layout_marginBottom="60px"
-                android:background="@drawable/list_shalat"></LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -397,6 +393,7 @@
             android:padding="10dp"
             android:paddingStart="20dp"
             android:textSize="18dp"
+            android:fontFamily="@font/semibold"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:text="Rabu, 17 Nov 2021"/>
@@ -414,7 +411,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/poppinsmedium"
                     android:textSize="18dp"
                     android:layout_weight="20"
                     android:text="JAWA BARAT"/>
@@ -455,6 +452,24 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-1dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:padding="5dp"
+        android:background="@drawable/bottom_nav"
+        android:elevation="3dp"
+        app:itemIconSize="35dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu" />
 
     <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
