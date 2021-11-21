@@ -146,12 +146,13 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/shubuh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
                     android:fontFamily="@font/semibold"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
@@ -189,12 +190,13 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/dhuha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/semibold"
                     android:gravity="end"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -231,11 +233,12 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/dzuhur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
@@ -273,12 +276,13 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/ashar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
                     android:fontFamily="@font/semibold"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -314,12 +318,13 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/maghrib"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
                     android:fontFamily="@font/semibold"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -355,12 +360,13 @@
                     android:layout_gravity="center"/>
 
                 <TextView
+                    android:id="@+id/isya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="end"
                     android:fontFamily="@font/semibold"
-                    android:text="04:20"
+                    android:text="--:--"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>

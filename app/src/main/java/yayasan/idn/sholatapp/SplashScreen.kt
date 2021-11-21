@@ -36,15 +36,13 @@ class SplashScreen : AppCompatActivity() {
                 mfusedlocation.lastLocation.addOnCompleteListener {
                     task ->
                     var location:Location? = task.result
-                    var geocoder = Geocoder(this)
-                    var addreses:List<Address>
                     if (location == null){
                         NewLocation()
                     }else{
                         Handler(Looper.getMainLooper()).postDelayed({
                             val intent = Intent(this,MainActivity::class.java)
-                            intent.putExtra("lat",location.latitude.toString())
-                            intent.putExtra("long",location.longitude.toString())
+                            intent.putExtra("lat",location.latitude)
+                            intent.putExtra("long",location.longitude)
                             intent.putExtra("el",location.altitude.toString())
                             startActivity(intent)
                             finish()
