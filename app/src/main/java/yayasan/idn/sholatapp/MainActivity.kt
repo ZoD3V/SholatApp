@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         getWeather(lat,long)
         getSholat(lat,long,el)
+        welcomeText()
 
         //show day
         val day = LocalDate.now().dayOfWeek.name
@@ -69,6 +70,23 @@ class MainActivity : AppCompatActivity() {
                 list_shalat5.setBackgroundResource(R.drawable.list_shalat)
                 list_shalat6.setBackgroundResource(R.drawable.list_shalat)
             }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun welcomeText(){
+        val calendar = Calendar.getInstance()
+        val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
+        if (timeOfDay in 0..11) {
+            weltext.text = "Selamat Pagi, sudah sholat Subuh?"
+        } else if (timeOfDay in 12..14) {
+            weltext.text = "Selamat Siang, sudah sholat Dzuhur?"
+        } else if (timeOfDay in 15..17) {
+            weltext.text = "Selamat Sore, sudah sholat Ashar?"
+        } else if (timeOfDay in 18..18) {
+            weltext.text = "Selamat malam, sudah sholat Maghrib?"
+        } else if (timeOfDay in 19..23){
+            weltext.text = "Selamat malam, sudah sholat Isya?"
         }
     }
 
@@ -114,7 +132,6 @@ class MainActivity : AppCompatActivity() {
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
             { response ->
-                println(response)
                 setValuesWeather(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
