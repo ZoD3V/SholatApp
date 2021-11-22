@@ -98,9 +98,10 @@
     <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
 
     <androidx.core.widget.NestedScrollView
+        android:layout_paddingBottom="100dp"
         android:id="@+id/rounded_home"
-        android:layout_width="match_parent"
-        android:layout_height="590dp"
+        android:layout_width="0dp"
+        android:layout_height="530dp"
         android:background="@drawable/rounded_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -457,22 +458,22 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-1dp" />
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottomNav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/bottom_nav"-->
-<!--        android:padding="5dp"-->
-<!--        android:elevation="3dp"-->
-<!--        app:itemIconSize="35dp"-->
-<!--        app:itemIconTint="@drawable/item_selector"-->
-<!--        app:itemRippleColor="@android:color/transparent"-->
-<!--        app:labelVisibilityMode="unlabeled"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/nav_menu" />-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav"
+        android:padding="5dp"
+        android:elevation="3dp"
+        app:itemIconSize="35dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu" />
 
 
     <!--    </LinearLayout>-->
