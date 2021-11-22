@@ -19,7 +19,6 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="270dp"
-
         android:background="@drawable/weather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,10 +109,9 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/rounded_home"
         android:layout_width="match_parent"
-        android:layout_height="670dp"
+        android:layout_height="590dp"
         android:background="@drawable/rounded_home"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
@@ -144,10 +142,10 @@
                     android:text="Waktu Shubuh"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="19dp"
+                    android:textSize="19dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -189,7 +187,7 @@
                     android:text="Waktu Dhuha"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="19dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
@@ -233,8 +231,8 @@
                     android:text="Waktu Dzuhur"
                     android:textColor="@color/white"
                     android:fontFamily="@font/semibold"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="19dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
@@ -277,8 +275,8 @@
                     android:text="Waktu Ashar"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="19dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
@@ -320,10 +318,10 @@
                     android:text="Waktu Maghrib"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="13dp"
                     android:layout_weight="2"
                     android:fontFamily="@font/semibold"
-                    android:layout_marginRight="19dp"
+                    android:layout_marginRight="13dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -362,8 +360,8 @@
                     android:layout_height="wrap_content"
                     android:text="Waktu Isya"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="25dp"
+                    android:textSize="19dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="2"
                     android:layout_marginRight="20dp"
                     android:layout_gravity="center"
@@ -470,12 +468,11 @@
         app:layout_constraintGuide_begin="-1dp" />
 
 <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottom_nav"-->
+<!--        android:id="@+id/bottomNav"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="18dp"-->
-<!--        android:padding="5dp"-->
 <!--        android:background="@drawable/bottom_nav"-->
+<!--        android:padding="5dp"-->
 <!--        android:elevation="3dp"-->
 <!--        app:itemIconSize="35dp"-->
 <!--        app:itemIconTint="@drawable/item_selector"-->

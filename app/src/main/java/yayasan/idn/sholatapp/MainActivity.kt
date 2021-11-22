@@ -14,33 +14,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import eightbitlab.com.blurview.BlurView
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.time.LocalDate
 import java.util.*
-import eightbitlab.com.blurview.RenderScriptBlur
-
-import android.graphics.drawable.Drawable
-
-import android.view.ViewGroup
-
-
-
 
 class MainActivity : AppCompatActivity() {
-
-    val blurView: BlurView = findViewById(R.id.blurLayout)
-
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SimpleDateFormat", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        blurBackground()
-
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.decorView.apply {
@@ -56,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         getWeather(lat,long)
         getSholat(lat,long,el)
+        welcomeText()
 
         //show day
         val day = LocalDate.now().dayOfWeek.name
@@ -88,22 +73,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun blurBackground() {
-        val radius = 21f
-
-        val decorView = window.decorView
-
-        val rootView = decorView.findViewById<View>(android.R.id.content) as ViewGroup
-
-        val windowBackground = decorView.background
-
-        blurView.setupWith(rootView)
-            .setFrameClearDrawable(windowBackground)
-            .setBlurAlgorithm(RenderScriptBlur(this))
-            .setBlurRadius(radius)
-            .setBlurAutoUpdate(true)
-            .setHasFixedTransformationMatrix(true) // Or false if it's in a scrolling container or might be animated
-
+    @SuppressLint("SetTextI18n")
+    private fun welcomeText(){
+        val calendar = Calendar.getInstance()
+        val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
+        if (timeOfDay in 0..11) {
+            weltext.text = "Selamat Pagi, sudah sholat Subuh?"
+        } else if (timeOfDay in 12..14) {
+            weltext.text = "Selamat Siang, sudah sholat Dzuhur?"
+        } else if (timeOfDay in 15..17) {
+            weltext.text = "Selamat Sore, sudah sholat Ashar?"
+        } else if (timeOfDay in 18..18) {
+            weltext.text = "Selamat malam, sudah sholat Maghrib?"
+        } else if (timeOfDay in 19..23){
+            weltext.text = "Selamat malam, sudah sholat Isya?"
+        }
     }
 
     private fun getSholat(lat: String?,long: String?,el:String?){
@@ -148,7 +132,6 @@ class MainActivity : AppCompatActivity() {
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
             { response ->
-                println(response)
                 setValuesWeather(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
