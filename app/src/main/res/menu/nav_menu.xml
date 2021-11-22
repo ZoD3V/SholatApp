@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#666666">
 
     <item
         android:id="@+id/nav_shalat"
@@ -10,7 +12,7 @@
         android:icon="@drawable/dhuha"
         android:title="Dzikir" />
     <item
-        android:id="@+id/nav_dzikir"
+        android:id="@+id/nav_quran"
         android:icon="@drawable/dzuhur"
         android:title="dzikir" />
 </menu>

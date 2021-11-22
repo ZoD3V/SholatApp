@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
@@ -104,6 +113,7 @@
         android:layout_height="670dp"
         android:background="@drawable/rounded_home"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
@@ -404,6 +414,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAlignment="center"
             android:paddingStart="20dp"
             android:textSize="18dp"
             android:fontFamily="@font/semibold"
@@ -414,27 +425,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingHorizontal="30dp">
+
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/poppinsmedium"
+                    android:gravity="center"
+                    android:textColor="#838383"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/semibold"
                     android:textSize="18dp"
+                    android:layout_marginHorizontal="25dp"
                     android:layout_weight="20"
-                    android:text="JAWA BARAT"/>
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
-            </LinearLayout>
+                    android:text="Selamat pagi, sudah shalat Shubuh?"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -466,23 +469,24 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-1dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:padding="5dp"
-        android:background="@drawable/bottom_nav"
-        android:elevation="3dp"
-        app:itemIconSize="35dp"
-        app:itemIconTint="@drawable/item_selector"
-        app:itemRippleColor="@android:color/transparent"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_nav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="18dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:background="@drawable/bottom_nav"-->
+<!--        android:elevation="3dp"-->
+<!--        app:itemIconSize="35dp"-->
+<!--        app:itemIconTint="@drawable/item_selector"-->
+<!--        app:itemRippleColor="@android:color/transparent"-->
+<!--        app:labelVisibilityMode="unlabeled"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:menu="@menu/nav_menu" />-->
+
 
     <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
