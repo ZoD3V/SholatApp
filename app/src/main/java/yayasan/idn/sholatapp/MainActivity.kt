@@ -1,11 +1,8 @@
 package yayasan.idn.sholatapp
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -34,12 +31,12 @@ class MainActivity : AppCompatActivity() {
             // hide the navigation bar.
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
-        val lat = intent.getDoubleExtra("lat", 0.0).toString()
-        val long = intent.getDoubleExtra("long",0.0).toString()
+        val lat = intent.getDoubleExtra("lat", 0.0)
+        val long = intent.getDoubleExtra("long",0.0)
         val el = intent.getStringExtra("el")
 
-        getWeather(lat,long)
-        getSholat(lat,long,el)
+        getWeather(lat.toString(),long.toString())
+        getSholat(lat.toString(),long.toString(),el)
         welcomeText()
 
         //show day
@@ -78,15 +75,15 @@ class MainActivity : AppCompatActivity() {
         val calendar = Calendar.getInstance()
         val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
         if (timeOfDay in 0..11) {
-            weltext.text = "Selamat Pagi, sudah sholat Subuh?"
+            weltext.text = "Assalamualaikum, sudah sholat Subuh?"
         } else if (timeOfDay in 12..14) {
-            weltext.text = "Selamat Siang, sudah sholat Dzuhur?"
+            weltext.text = "Assalamualaikum, sudah sholat Dzuhur?"
         } else if (timeOfDay in 15..17) {
-            weltext.text = "Selamat Sore, sudah sholat Ashar?"
+            weltext.text = "Assalamualaikum, sudah sholat Ashar?"
         } else if (timeOfDay in 18..18) {
-            weltext.text = "Selamat malam, sudah sholat Maghrib?"
+            weltext.text = "Assalamualaikum, sudah sholat Maghrib?"
         } else if (timeOfDay in 19..23){
-            weltext.text = "Selamat malam, sudah sholat Isya?"
+            weltext.text = "Assalamualaikum, sudah sholat Isya?"
         }
     }
 
@@ -99,7 +96,6 @@ class MainActivity : AppCompatActivity() {
                 setValuesSholat(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
-        queue.cache.clear()
         queue.add(jsonRequest)
     }
 
@@ -124,7 +120,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getWeather(lat: String?, long: String?) {
-
+        val lang = "id"
         val apiKey = "732059b1c20f74eee6738e66b90b1997"
         val queue = Volley.newRequestQueue(this)
         val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}"
@@ -135,7 +131,6 @@ class MainActivity : AppCompatActivity() {
                 setValuesWeather(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
-        queue.cache.clear()
         queue.add(jsonRequest)
     }
 

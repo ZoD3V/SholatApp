@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <eightbitlab.com.blurview.BlurView
-        android:id="@+id/blurLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
@@ -417,14 +408,14 @@
             android:textSize="18dp"
             android:fontFamily="@font/semibold"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Rabu, 17 Nov 2021"/>
+            android:textStyle="bold"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"/>
 
                 <TextView
+                    android:id="@+id/weltext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -433,8 +424,7 @@
                     android:fontFamily="@font/semibold"
                     android:textSize="18dp"
                     android:layout_marginHorizontal="25dp"
-                    android:layout_weight="20"
-                    android:text="Selamat pagi, sudah shalat Shubuh?"/>
+                    android:layout_weight="20"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

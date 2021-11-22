@@ -15,6 +15,7 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import java.text.DecimalFormat
 import java.util.*
 
 
@@ -44,6 +45,7 @@ class SplashScreen : AppCompatActivity() {
                             intent.putExtra("lat",location.latitude)
                             intent.putExtra("long",location.longitude)
                             intent.putExtra("el",location.altitude.toString())
+
                             startActivity(intent)
                             finish()
                         },2000)
