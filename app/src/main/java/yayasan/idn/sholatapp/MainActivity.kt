@@ -1,6 +1,7 @@
 package yayasan.idn.sholatapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -31,58 +32,63 @@ class MainActivity : AppCompatActivity() {
             // hide the navigation bar.
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
-        val lat = intent.getDoubleExtra("lat", 0.0)
-        val long = intent.getDoubleExtra("long",0.0)
+        val lat = intent.getDoubleExtra("lat", 0.0).toString()
+        val long = intent.getDoubleExtra("long",0.0).toString()
         val el = intent.getStringExtra("el")
+        val calendar = Calendar.getInstance()
+        val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
 
-        getWeather(lat.toString(),long.toString())
-        getSholat(lat.toString(),long.toString(),el)
-        welcomeText()
+        getWeather(lat,long)
+        getSholat(lat,long,el)
+        welcomeText(timeOfDay)
+        automatedTheme(timeOfDay)
+
+        kiblat_btn.setOnClickListener{
+            startActivity(Intent(this,KiblatActivity::class.java))
+        }
 
         //show day
         val day = LocalDate.now().dayOfWeek.name
         val month = LocalDate.now().month.name
         val year = LocalDate.now().year
         tanggal.text = "$day, $month $year"
+    }
 
-        //change theme
-        switchTheme.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked){
-                frameLayout.setBackgroundResource(R.drawable.weather_rain)
-                rounded_home.setBackgroundResource(R.drawable.rounded_home_dark)
-                list_shalat1.setBackgroundResource(R.drawable.list_shalat_dark)
-                list_shalat2.setBackgroundResource(R.drawable.list_shalat_dark)
-                list_shalat3.setBackgroundResource(R.drawable.list_shalat_dark)
-                list_shalat4.setBackgroundResource(R.drawable.list_shalat_dark)
-                list_shalat5.setBackgroundResource(R.drawable.list_shalat_dark)
-                list_shalat6.setBackgroundResource(R.drawable.list_shalat_dark)
-
-            }else{
-                frameLayout.setBackgroundResource(R.drawable.weather)
-                rounded_home.setBackgroundResource(R.drawable.rounded_home)
-                list_shalat1.setBackgroundResource(R.drawable.list_shalat)
-                list_shalat2.setBackgroundResource(R.drawable.list_shalat)
-                list_shalat3.setBackgroundResource(R.drawable.list_shalat)
-                list_shalat4.setBackgroundResource(R.drawable.list_shalat)
-                list_shalat5.setBackgroundResource(R.drawable.list_shalat)
-                list_shalat6.setBackgroundResource(R.drawable.list_shalat)
-            }
+    private fun automatedTheme(timeTheme:Int){
+        if(timeTheme < 18){
+            frameLayout.setBackgroundResource(R.drawable.weather)
+            bottomNav.setBackgroundResource(R.drawable.bottom_nav)
+            rounded_home.setBackgroundResource(R.drawable.rounded_home)
+            list_shalat1.setBackgroundResource(R.drawable.list_shalat)
+            list_shalat2.setBackgroundResource(R.drawable.list_shalat)
+            list_shalat3.setBackgroundResource(R.drawable.list_shalat)
+            list_shalat4.setBackgroundResource(R.drawable.list_shalat)
+            list_shalat5.setBackgroundResource(R.drawable.list_shalat)
+            list_shalat6.setBackgroundResource(R.drawable.list_shalat)
+        }else{
+            frameLayout.setBackgroundResource(R.drawable.weather_rain)
+            rounded_home.setBackgroundResource(R.drawable.rounded_dark)
+            list_shalat1.setBackgroundResource(R.drawable.list_shalat_dark)
+            list_shalat2.setBackgroundResource(R.drawable.list_shalat_dark)
+            list_shalat3.setBackgroundResource(R.drawable.list_shalat_dark)
+            list_shalat4.setBackgroundResource(R.drawable.list_shalat_dark)
+            list_shalat5.setBackgroundResource(R.drawable.list_shalat_dark)
+            bottomNav.setBackgroundResource(R.drawable.dark_nav)
+            list_shalat6.setBackgroundResource(R.drawable.list_shalat_dark)
         }
     }
 
     @SuppressLint("SetTextI18n")
-    private fun welcomeText(){
-        val calendar = Calendar.getInstance()
-        val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
-        if (timeOfDay in 0..11) {
+    private fun welcomeText(time:Int){
+        if (time in 0..11) {
             weltext.text = "Assalamualaikum, sudah sholat Subuh?"
-        } else if (timeOfDay in 12..14) {
+        } else if (time in 12..14) {
             weltext.text = "Assalamualaikum, sudah sholat Dzuhur?"
-        } else if (timeOfDay in 15..17) {
+        } else if (time in 15..17) {
             weltext.text = "Assalamualaikum, sudah sholat Ashar?"
-        } else if (timeOfDay in 18..18) {
+        } else if (time in 18..18) {
             weltext.text = "Assalamualaikum, sudah sholat Maghrib?"
-        } else if (timeOfDay in 19..23){
+        } else if (time in 19..23){
             weltext.text = "Assalamualaikum, sudah sholat Isya?"
         }
     }

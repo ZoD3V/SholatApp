@@ -48,7 +48,7 @@
                     android:textSize="50dp" />
 
                 <ImageButton
-                    android:id="@+id/switchTheme"
+                    android:id="@+id/kiblat_btn"
                     android:background="@drawable/kiblat_rounded"
                     android:layout_width="50dp"
                     android:scaleType="fitXY"
@@ -103,7 +103,7 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/rounded_home"
         android:layout_width="0dp"
-        android:layout_height="530dp"
+        android:layout_height="510dp"
         android:background="@drawable/rounded_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Shubuh"
+                    android:text="@string/waktu_shubuh"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="19dp"
@@ -178,7 +178,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Dhuha"
+                    android:text="@string/waktu_dhuha"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="19dp"
@@ -266,7 +266,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Ashar"
+                    android:text="@string/waktu_ashar"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="19dp"
@@ -309,7 +309,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Maghrib"
+                    android:text="@string/waktu_maghrib"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:layout_marginLeft="15dp"
@@ -352,7 +352,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Waktu Isya"
+                    android:text="@string/waktu_isya"
                     android:textColor="@color/white"
                     android:textSize="19dp"
                     android:layout_marginLeft="15dp"
@@ -403,34 +403,34 @@
             android:layout_height="match_parent"
             android:elevation="5dp"
             android:orientation="vertical">
-        <TextView
-            android:id="@+id/tanggal"
+            <TextView
+                android:id="@+id/tanggal"
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:paddingStart="20dp"
-            android:textSize="17dp"
-            android:fontFamily="@font/semibold"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:paddingStart="20dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"/>
 
-                <TextView
-                    android:id="@+id/weltext"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="#838383"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/semibold"
-                    android:textSize="17dp"
-                    android:layout_marginHorizontal="25dp"
-                    android:layout_weight="20"/>
+            <TextView
+                android:id="@+id/weltext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#838383"
+                android:textAlignment="center"
+                android:fontFamily="@font/semibold"
+                android:textSize="17dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_weight="20"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

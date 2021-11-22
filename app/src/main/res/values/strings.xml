@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SholatApp</string>
+    <string name="waktu_shubuh">Waktu Shubuh</string>
+    <string name="waktu_dhuha">Waktu Dhuha</string>
+    <string name="waktu_ashar">Waktu Ashar</string>
+    <string name="waktu_maghrib">Waktu Maghrib</string>
+    <string name="waktu_isya">Waktu Isya</string>
 </resources>
