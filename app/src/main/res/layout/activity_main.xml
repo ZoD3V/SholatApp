@@ -47,10 +47,13 @@
                     android:textColor="@color/white"
                     android:textSize="50dp" />
 
-                <Switch
+                <ImageButton
                     android:id="@+id/switchTheme"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:background="@drawable/kiblat_rounded"
+                    android:layout_width="50dp"
+                    android:scaleType="fitXY"
+                    android:layout_height="50dp"
+                    android:src="@drawable/kiblat"
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="10dp"/>
             </LinearLayout>
@@ -98,7 +101,6 @@
     <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
 
     <androidx.core.widget.NestedScrollView
-        android:layout_paddingBottom="100dp"
         android:id="@+id/rounded_home"
         android:layout_width="0dp"
         android:layout_height="530dp"
@@ -180,9 +182,9 @@
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -224,9 +226,9 @@
                     android:textColor="@color/white"
                     android:fontFamily="@font/semibold"
                     android:textSize="19dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -268,9 +270,9 @@
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -309,11 +311,11 @@
                     android:layout_height="wrap_content"
                     android:text="Waktu Maghrib"
                     android:textColor="@color/white"
-                    android:textSize="19dp"
-                    android:layout_marginLeft="13dp"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
                     android:fontFamily="@font/semibold"
-                    android:layout_marginRight="13dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -353,9 +355,9 @@
                     android:text="Waktu Isya"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_weight="2"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
                     android:layout_gravity="center"
                     android:fontFamily="@font/semibold"
                     android:textAlignment="center"/>
@@ -384,11 +386,12 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/card_date"
         android:layout_width="0dp"
         android:layout_height="110dp"
         android:layout_margin="20dp"
-        android:elevation="15dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@color/white"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="20dp"
@@ -398,15 +401,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:elevation="5dp"
             android:orientation="vertical">
         <TextView
             android:id="@+id/tanggal"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:textAlignment="center"
             android:paddingStart="20dp"
-            android:textSize="18dp"
+            android:textSize="17dp"
             android:fontFamily="@font/semibold"
             android:textColor="@color/black"
             android:textStyle="bold"/>
@@ -423,7 +428,7 @@
                     android:textColor="#838383"
                     android:textAlignment="center"
                     android:fontFamily="@font/semibold"
-                    android:textSize="18dp"
+                    android:textSize="17dp"
                     android:layout_marginHorizontal="25dp"
                     android:layout_weight="20"/>
 
@@ -465,7 +470,7 @@
         android:background="@drawable/bottom_nav"
         android:padding="5dp"
         android:elevation="3dp"
-        app:itemIconSize="35dp"
+        app:itemIconSize="50dp"
         app:itemIconTint="@drawable/item_selector"
         app:itemRippleColor="@android:color/transparent"
         app:labelVisibilityMode="unlabeled"
@@ -473,7 +478,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
+        app:menu="@menu/nav_menu"
+        app:elevation="5dp"/>
 
 
     <!--    </LinearLayout>-->

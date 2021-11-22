@@ -4,14 +4,14 @@
 
     <item
         android:id="@+id/nav_shalat"
-        android:icon="@drawable/ashar"
+        android:icon="@drawable/shalat"
         android:title="Shalat" />
     <item
-        android:id="@+id/nav_dzikir"
-        android:icon="@drawable/dhuha"
+        android:id="@+id/nav_quran"
+        android:icon="@drawable/quran"
         android:title="Dzikir" />
     <item
-        android:id="@+id/nav_quran"
-        android:icon="@drawable/dzuhur"
+        android:id="@+id/nav_dzikr"
+        android:icon="@drawable/shalat"
         android:title="dzikir" />
 </menu>
