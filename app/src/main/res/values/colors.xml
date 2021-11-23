@@ -12,6 +12,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="sdark">#6795BE</color>
     <color name="dark_stroke">#8F8F8F</color>
+    <color name="background">#7B8FBB</color>
 
 
 </resources>
