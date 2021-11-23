@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.1'
     //Rest Api
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
-    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.4'
     implementation 'com.github.florent37:expansionpanel:1.2.4'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

@@ -1,10 +1,10 @@
 package yayasan.idn.sholatapp
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
+import yayasan.idn.sholatapp.util.LoadingDialog
 import java.time.LocalDate
 import java.util.*
 
@@ -24,6 +26,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //call loading item
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed({ loading.isDismiss() },2000)
+
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.decorView.apply {
@@ -58,7 +67,6 @@ class MainActivity : AppCompatActivity() {
     private fun automatedTheme(timeTheme:Int){
         if(timeTheme < 18){
             frameLayout.setBackgroundResource(R.drawable.weather)
-            bottomNav.setBackgroundResource(R.drawable.bottom_nav)
             rounded_home.setBackgroundResource(R.drawable.rounded_home)
             list_shalat1.setBackgroundResource(R.drawable.list_shalat)
             list_shalat2.setBackgroundResource(R.drawable.list_shalat)
@@ -74,7 +82,6 @@ class MainActivity : AppCompatActivity() {
             list_shalat3.setBackgroundResource(R.drawable.list_shalat_dark)
             list_shalat4.setBackgroundResource(R.drawable.list_shalat_dark)
             list_shalat5.setBackgroundResource(R.drawable.list_shalat_dark)
-            bottomNav.setBackgroundResource(R.drawable.dark_nav)
             list_shalat6.setBackgroundResource(R.drawable.list_shalat_dark)
         }
     }
@@ -130,11 +137,12 @@ class MainActivity : AppCompatActivity() {
         val lang = "id"
         val apiKey = "732059b1c20f74eee6738e66b90b1997"
         val queue = Volley.newRequestQueue(this)
-        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}"
+        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&lang=${lang}"
         // Request a string response from the provided URL.
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
             { response ->
+                print(response)
                 setValuesWeather(response)
             },
             { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
@@ -144,9 +152,12 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun setValuesWeather(response: JSONObject) {
         city.text = response.getString("name")
-        weather.text=response.getJSONArray("weather").getJSONObject(0).getString("main")
+        weather.text=response.getJSONArray("weather").getJSONObject(0).getString("description")
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
+        val iconWeather:String = response.getJSONArray("weather").getJSONObject(0).getString("icon")
+        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather.png"
+        Picasso.get().load(iconUrl).into(icn_weather)
     }
 }
