@@ -2,9 +2,11 @@ package yayasan.idn.sholatapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -42,14 +44,19 @@ class MainActivity : AppCompatActivity() {
             // hide the navigation bar.
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
-        val lat = intent.getDoubleExtra("lat", 0.0).toString()
-        val long = intent.getDoubleExtra("long",0.0).toString()
+        val lat = intent.getDoubleExtra("lat", 0.0)
+        val long = intent.getDoubleExtra("long",0.0)
         val el = intent.getStringExtra("el")
         val calendar = Calendar.getInstance()
         val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
 
-        getWeather(lat,long)
-        getSholat(lat,long,el)
+        val geocoder = Geocoder(this, Locale.getDefault())
+        val addresses = geocoder.getFromLocation(lat, long, 3)
+
+        val cityName = addresses[1].locality
+
+        getWeather(lat.toString(),long.toString(),cityName)
+        getSholat(lat.toString(),long.toString(),el)
         welcomeText(timeOfDay)
         automatedTheme(timeOfDay)
 
@@ -109,7 +116,7 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 setValuesSholat(response)
             },
-            { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
+            { Toast.makeText(this,"ERROR Sholat",Toast.LENGTH_LONG).show() })
         queue.add(jsonRequest)
     }
 
@@ -133,31 +140,30 @@ class MainActivity : AppCompatActivity() {
             .getJSONObject(0).getJSONObject("times").getString("Isha")
     }
 
-    private fun getWeather(lat: String?, long: String?) {
-        val lang = "id"
+    private fun getWeather(lat: String?, long: String?,city:String?) {
         val apiKey = "732059b1c20f74eee6738e66b90b1997"
         val queue = Volley.newRequestQueue(this)
-        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&lang=${lang}"
+        val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&lang=id"
         // Request a string response from the provided URL.
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
             { response ->
-                print(response)
-                setValuesWeather(response)
+                setValuesWeather(response,city)
             },
-            { Toast.makeText(this,"ERROR",Toast.LENGTH_LONG).show() })
+            { Toast.makeText(this,"ERROR Weahter",Toast.LENGTH_LONG).show() })
         queue.add(jsonRequest)
     }
 
     @SuppressLint("SetTextI18n")
-    private fun setValuesWeather(response: JSONObject) {
-        city.text = response.getString("name")
+    private fun setValuesWeather(response: JSONObject,cityName:String?) {
+        city.text = cityName
+//        city.text = response.getString("name")
         weather.text=response.getJSONArray("weather").getJSONObject(0).getString("description")
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
-        val iconWeather:String = response.getJSONArray("weather").getJSONObject(0).getString("icon")
-        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather.png"
-        Picasso.get().load(iconUrl).into(icn_weather)
+//        val iconWeather:String = response.getJSONArray("weather").getJSONObject(0).getString("icon")
+//        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
+//        Picasso.get().load(iconUrl).into(icn_weather)
     }
 }

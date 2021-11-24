@@ -30,7 +30,8 @@
                 <ImageView
                     android:id="@+id/icn_weather"
                     android:layout_width="200px"
-                    android:layout_height="200px" />
+                    android:adjustViewBounds="true"
+                    android:layout_height="200px"/>
 
                 <TextView
                     android:id="@+id/temp"

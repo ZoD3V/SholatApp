@@ -17,7 +17,6 @@ class KiblatActivity : AppCompatActivity() {
         kiblatview.loadUrl("https://qiblafinder.withgoogle.com/intl/id/")
 
         kiblatview.settings.javaScriptEnabled = true
-
         kiblatview.settings.setSupportZoom(true)
     }
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
