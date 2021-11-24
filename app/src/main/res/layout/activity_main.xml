@@ -67,6 +67,7 @@
                 android:shadowDy="3"
                 android:shadowRadius="8"
                 android:text="-----"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:textSize="21dp"
                 android:textStyle="bold" />
@@ -80,6 +81,7 @@
                 android:shadowDy="3"
                 android:shadowRadius="8"
                 android:text="-----"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -99,16 +101,18 @@
     <!--        app:layout_constraintEnd_toEndOf="parent"-->
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
-
-    <androidx.core.widget.NestedScrollView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/rounded_home"
         android:layout_width="0dp"
-        android:layout_height="510dp"
+        android:layout_height="580dp"
         android:background="@drawable/rounded_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2">
-
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -151,14 +155,14 @@
 
                 <TextView
                     android:id="@+id/shubuh"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:textAlignment="center"
                     android:fontFamily="@font/semibold"
                     android:text="--:--"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
 
             </LinearLayout>
 
@@ -196,14 +200,14 @@
 
                 <TextView
                     android:id="@+id/dhuha"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/semibold"
-                    android:gravity="end"
+                    android:textAlignment="center"
                     android:text="--:--"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -240,14 +244,14 @@
 
                 <TextView
                     android:id="@+id/dzuhur"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:textAlignment="center"
                     android:text="--:--"
                     android:fontFamily="@font/semibold"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -284,14 +288,14 @@
 
                 <TextView
                     android:id="@+id/ashar"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:textAlignment="center"
                     android:fontFamily="@font/semibold"
                     android:text="--:--"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/list_shalat5"
@@ -312,10 +316,10 @@
                     android:text="@string/waktu_maghrib"
                     android:textColor="@color/white"
                     android:textSize="18dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="12dp"
                     android:layout_weight="2"
                     android:fontFamily="@font/semibold"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="12dp"
                     android:layout_gravity="center"
                     android:textAlignment="center"/>
                 <View
@@ -327,21 +331,21 @@
 
                 <TextView
                     android:id="@+id/maghrib"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:textAlignment="center"
                     android:fontFamily="@font/semibold"
                     android:text="--:--"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/list_shalat6"
                 android:layout_width="match_parent"
                 android:elevation="5dp"
                 android:layout_height="95dp"
-                android:layout_marginBottom="60px"
+                android:layout_marginBottom="50dp"
                 android:padding="20dp"
                 android:background="@drawable/list_shalat">
                 <ImageView
@@ -370,21 +374,115 @@
 
                 <TextView
                     android:id="@+id/isya"
-                    android:layout_width="wrap_content"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="end"
+                    android:textAlignment="center"
+
                     android:fontFamily="@font/semibold"
                     android:text="--:--"
                     android:textColor="@color/white"
-                    android:textSize="20dp" />
+                    android:textSize="19dp" />
             </LinearLayout>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+        </androidx.core.widget.NestedScrollView>
     <!--    </com.google.android.material.card.MaterialCardView>-->
 
 
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_gravity="bottom"
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4FADBB"
+            app:fabAlignmentMode="center"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:hideOnScroll="true"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/quran"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/kiblat_rounded"
+                            android:backgroundTint="@android:color/white"
+                            android:padding="5dp"
+                            android:src="@drawable/quran"
+                            app:tint="#4FADBB" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible" />
+
+                    <LinearLayout
+                        android:id="@+id/llMosque"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/kiblat_rounded"
+                            android:backgroundTint="@android:color/white"
+                            android:padding="5dp"
+                            android:src="@drawable/quran"
+                            app:tint="#4FADBB" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:background="@color/white"
+            android:elevation="4dp"
+            app:backgroundTint="#4FADBB"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/shalat_big"
+            app:maxImageSize="38dp"
+            app:layout_anchor="@+id/navBar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <androidx.cardview.widget.CardView
         android:id="@+id/card_date"
         android:layout_width="0dp"
@@ -434,7 +532,6 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -454,7 +551,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.39" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -462,100 +559,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-1dp" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_gravity="bottom"
-            android:id="@+id/navBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#4FADBB"
-            app:fabAlignmentMode="center"
-            app:fabCradleRoundedCornerRadius="50dp"
-            app:fabCradleMargin="10dp"
-            app:hideOnScroll="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/llTime"
-                        android:layout_width="0.0dip"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1.0"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/kiblat_rounded"
-                            android:backgroundTint="@android:color/white"
-                            android:padding="7dp"
-                            android:src="@drawable/dzikr"
-                            app:tint="#4FADBB" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0.0dip"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1.0"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:visibility="invisible" />
-
-                    <LinearLayout
-                        android:id="@+id/llMosque"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:background="@drawable/kiblat_rounded"
-                            android:backgroundTint="@android:color/white"
-                            android:padding="5dp"
-                            android:src="@drawable/quran"
-                            app:tint="#4FADBB" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </com.google.android.material.bottomappbar.BottomAppBar>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
-            app:backgroundTint="#7B8FBB"
-            app:layout_anchor="@+id/navBar"
-            app:srcCompat="@drawable/shalat" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     <!--    </LinearLayout>-->
