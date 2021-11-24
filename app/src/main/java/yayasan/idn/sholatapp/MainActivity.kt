@@ -2,6 +2,7 @@ package yayasan.idn.sholatapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.location.Address
 import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
@@ -51,9 +52,20 @@ class MainActivity : AppCompatActivity() {
         val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
 
         val geocoder = Geocoder(this, Locale.getDefault())
-        val addresses = geocoder.getFromLocation(lat, long, 3)
+        var addresses: List<Address>? = null
+        try {
+            addresses = geocoder.getFromLocation(
+                lat,
+                long,
+                1)
+        } catch (ignored: Exception) {
+        }
 
-        val cityName = addresses[1].locality
+        if (addresses == null || addresses.isEmpty()) {
+            Toast.makeText(this,"No address found for the location",Toast.LENGTH_SHORT).show()
+        }
+
+        val cityName = addresses?.get(0)?.subLocality
 
         getWeather(lat.toString(),long.toString(),cityName)
         getSholat(lat.toString(),long.toString(),el)
@@ -162,8 +174,8 @@ class MainActivity : AppCompatActivity() {
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
-//        val iconWeather:String = response.getJSONArray("weather").getJSONObject(0).getString("icon")
-//        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
-//        Picasso.get().load(iconUrl).into(icn_weather)
+        val iconWeather = response.getJSONArray("weather").getJSONObject(0).getString("icon")
+        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2xx.png"
+        Picasso.get().load(iconUrl).into(icn_weather)
     }
 }

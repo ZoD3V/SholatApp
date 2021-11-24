@@ -39,6 +39,8 @@ class SplashScreen : AppCompatActivity() {
                     var location:Location? = task.result
                     if (location == null){
                         NewLocation()
+                        Toast.makeText(this,"No location, can't go further without location",
+                        Toast.LENGTH_SHORT).show()
                     }else{
                         Handler(Looper.getMainLooper()).postDelayed({
                             val intent = Intent(this,MainActivity::class.java)
