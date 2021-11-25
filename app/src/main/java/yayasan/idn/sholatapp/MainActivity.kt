@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
+import yayasan.idn.sholatapp.alquran.ListQuranActivity
 import yayasan.idn.sholatapp.util.LoadingDialog
 import java.time.LocalDate
 import java.util.*
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        quranmove.setOnClickListener {
+            startActivity(Intent(this,ListQuranActivity::class.java))
+        }
 
         //call loading item
         val loading = LoadingDialog(this)
@@ -54,11 +59,9 @@ class MainActivity : AppCompatActivity() {
         val geocoder = Geocoder(this, Locale.getDefault())
         var addresses: List<Address>? = null
         try {
-            addresses = geocoder.getFromLocation(
-                lat,
-                long,
-                1)
+            addresses = geocoder.getFromLocation(lat, long, 1)
         } catch (ignored: Exception) {
+
         }
 
         if (addresses == null || addresses.isEmpty()) {

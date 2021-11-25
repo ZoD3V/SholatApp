@@ -3,27 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.3104166666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3101851851851852" />
         <entry key="app/src/main/res/drawable/arrow.xml" value="0.137890625" />
-        <entry key="app/src/main/res/drawable/background_view.xml" value="0.26981981981981984" />
-        <entry key="app/src/main/res/drawable/backrgound_view.xml" value="0.5" />
         <entry key="app/src/main/res/drawable/bg_splash.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/customprogressbar.xml" value="0.21512027491408936" />
         <entry key="app/src/main/res/drawable/dark_nav.xml" value="0.11701388888888889" />
         <entry key="app/src/main/res/drawable/direction.xml" value="0.21736111111111112" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.137890625" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/item_selector.xml" value="0.2076388888888889" />
         <entry key="app/src/main/res/drawable/list_shalat.xml" value="0.3101851851851852" />
         <entry key="app/src/main/res/drawable/list_shalat_dark.xml" value="0.12291666666666666" />
-        <entry key="app/src/main/res/drawable/rounded_dark.xml" value="0.281981981981982" />
         <entry key="app/src/main/res/drawable/rounded_home.xml" value="0.2641350210970464" />
         <entry key="app/src/main/res/drawable/rounded_home_dark.xml" value="0.12291666666666666" />
-        <entry key="app/src/main/res/layout/actifity_quran.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/actifity_quran.xml" value="0.20446735395189003" />
         <entry key="app/src/main/res/layout/activity_kiblat.xml" value="0.2065972222222222" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_list_quran.xml" value="0.18556701030927836" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20277322042199658" />
+        <entry key="app/src/main/res/layout/activity_quran.xml" value="0.17269989981714176" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/dzikir.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/list_actifity_quran.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/loading_item.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/circular_progress.xml" value="0.18022234124227723" />
+        <entry key="app/src/main/res/layout/dzikir.xml" value="0.20446735395189003" />
+        <entry key="app/src/main/res/layout/list_actifity_quran.xml" value="0.4153819125674152" />
+        <entry key="app/src/main/res/layout/list_activity_quran.xml" value="0.37500514909326765" />
+        <entry key="app/src/main/res/layout/loading_item.xml" value="0.7753993479876606" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.20347222222222222" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.20446735395189003" />
       </map>
     </option>
   </component>
