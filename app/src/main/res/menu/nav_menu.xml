@@ -4,14 +4,15 @@
 
     <item
         android:id="@+id/nav_shalat"
-        android:icon="@drawable/shalat"
-        android:title="Shalat" />
-    <item
-        android:id="@+id/nav_quran"
         android:icon="@drawable/quran"
-        android:title="Dzikir" />
+        android:title="Shalat"
+        app:showAsAction="ifRoom"/>
+    <item
+        app:showAsAction="ifRoom"
+        android:title="" />
     <item
         android:id="@+id/nav_dzikr"
-        android:icon="@drawable/shalat"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/dzikir"
         android:title="dzikir" />
 </menu>

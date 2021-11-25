@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:background="@drawable/ayat_border"
+    android:orientation="horizontal">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35dp"
+            android:padding="-10dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ayat_frame"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="12dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:lineHeight="21dp"
+            android:text="بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/white"
+            android:textAlignment="textStart"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginVertical="5dp"
+            android:background="@color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:lineHeight="21dp"
+            android:text="ayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha Penyayang............asasasasa"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/white"
+
+            android:textAlignment="textStart"
+            />
+    </LinearLayout>
+</LinearLayout>

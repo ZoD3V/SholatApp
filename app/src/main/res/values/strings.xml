@@ -6,4 +6,6 @@
     <string name="waktu_maghrib">Waktu Maghrib</string>
     <string name="waktu_isya">Waktu Isya</string>
     <string name="loading">Loading...!!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
