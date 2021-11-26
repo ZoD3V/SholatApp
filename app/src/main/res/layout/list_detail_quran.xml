@@ -36,11 +36,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
-            android:fontFamily="@font/poppinsbold"
-            android:textSize="15dp"
-            android:lineHeight="25dp"
+            android:fontFamily="@font/semibold"
+            android:textSize="20dp"
+            android:lineHeight="30dp"
             android:textColor="@color/black"
-            android:text="بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم ِ"/>
+            android:text="بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم ِ"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"

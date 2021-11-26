@@ -72,6 +72,7 @@
                     android:fontFamily="@font/poppinsmedium"
                     android:textColor="@color/white"
                     android:layout_marginTop="-5dp"
+
                     android:textSize="15sp" />
                 <TextView
                     android:id="@+id/tvInfo"
@@ -79,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsmedium"
                     android:textColor="@color/white"
-                    android:layout_marginTop="-5dp"
+
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -87,9 +88,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginRight="12dp"
                 android:layout_weight="3"
-                android:paddingRight="3dp"
+
                 android:src="@drawable/quran_img2" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

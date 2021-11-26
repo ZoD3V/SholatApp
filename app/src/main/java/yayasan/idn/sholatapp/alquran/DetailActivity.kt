@@ -46,9 +46,6 @@ class DetailActivity : AppCompatActivity() {
 
         rvAyat.isNestedScrollingEnabled = false
 
-        //set toolbar
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
 
         mHandler = Handler()
 
