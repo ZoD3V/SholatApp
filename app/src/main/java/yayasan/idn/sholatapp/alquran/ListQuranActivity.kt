@@ -1,13 +1,10 @@
 package yayasan.idn.sholatapp.alquran
 
-import android.app.ProgressDialog
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.Menu
 import android.view.View
 import android.view.WindowManager
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +12,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quran.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -22,7 +20,6 @@ import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.SurahAdapter
 import yayasan.idn.sholatapp.apiquran.Api
 import yayasan.idn.sholatapp.model.ModelSurah
-import yayasan.idn.sholatapp.util.LoadingDialog
 
 class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
     var surahAdapter: SurahAdapter? = null
@@ -41,13 +38,6 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
             // hide the navigation bar.
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
-        
-//        call loading item
-        val loading = LoadingDialog(this)
-        loading.startLoading()
-        val handler = Handler()
-        handler.postDelayed({ loading.isDismiss() },2000)
-
 
         rvSurah.layoutManager = LinearLayoutManager(this)
         rvSurah.setHasFixedSize(true)
@@ -89,17 +79,20 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
             })
     }
 
+
     private fun showListSurah() {
         surahAdapter = SurahAdapter(this@ListQuranActivity, modelSurah, this)
         rvSurah!!.adapter = surahAdapter
-    }
-
-    override fun onSelected(modelSurah: ModelSurah?) {
-        Toast.makeText(this@ListQuranActivity, "modelSurah", Toast.LENGTH_SHORT).show()
     }
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
+    override fun onSelected(modelSurah: ModelSurah) {
+        val intent = Intent(this@ListQuranActivity, DetailActivity::class.java)
+        intent.putExtra("detailSurah", modelSurah)
+        startActivity(intent)
+    }
 }
+

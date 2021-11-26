@@ -6,8 +6,6 @@ import android.location.Address
 import android.location.Geocoder
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -20,7 +18,6 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import yayasan.idn.sholatapp.alquran.ListQuranActivity
-import yayasan.idn.sholatapp.util.LoadingDialog
 import java.time.LocalDate
 import java.util.*
 
@@ -30,16 +27,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        quranmove.setOnClickListener {
-            startActivity(Intent(this,ListQuranActivity::class.java))
-        }
-
-        //call loading item
-        val loading = LoadingDialog(this)
-        loading.startLoading()
-        val handler = Handler()
-        handler.postDelayed({ loading.isDismiss() },2000)
 
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -60,23 +47,26 @@ class MainActivity : AppCompatActivity() {
         var addresses: List<Address>? = null
         try {
             addresses = geocoder.getFromLocation(lat, long, 1)
-        } catch (ignored: Exception) {
+            val cityName = addresses?.get(0)?.subLocality
 
+            getWeather(lat.toString(),long.toString(),cityName)
+            getSholat(lat.toString(),long.toString(),el)
+            welcomeText(timeOfDay)
+            automatedTheme(timeOfDay)
+        } catch (ignored: Exception) {
         }
 
         if (addresses == null || addresses.isEmpty()) {
-            Toast.makeText(this,"No address found for the location",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"No address found for the location",Toast.LENGTH_SHORT)
+                .show()
         }
-
-        val cityName = addresses?.get(0)?.subLocality
-
-        getWeather(lat.toString(),long.toString(),cityName)
-        getSholat(lat.toString(),long.toString(),el)
-        welcomeText(timeOfDay)
-        automatedTheme(timeOfDay)
 
         kiblat_btn.setOnClickListener{
             startActivity(Intent(this,KiblatActivity::class.java))
+        }
+
+        movequran.setOnClickListener {
+            startActivity(Intent(this,ListQuranActivity::class.java))
         }
 
         //show day
@@ -131,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 setValuesSholat(response)
             },
-            { Toast.makeText(this,"ERROR Sholat",Toast.LENGTH_LONG).show() })
+            { Toast.makeText(this,"Failed Show Data Sholat",Toast.LENGTH_LONG).show() })
         queue.add(jsonRequest)
     }
 
@@ -165,7 +155,7 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 setValuesWeather(response,city)
             },
-            { Toast.makeText(this,"ERROR Weahter",Toast.LENGTH_LONG).show() })
+            { Toast.makeText(this,"Failed Show Data Weather",Toast.LENGTH_LONG).show() })
         queue.add(jsonRequest)
     }
 

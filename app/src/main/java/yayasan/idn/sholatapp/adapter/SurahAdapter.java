@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +33,7 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.ViewHolder> 
         this.onSelectData = xSelectData;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_activity_quran, parent, false);
@@ -47,7 +49,12 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.ViewHolder> 
         holder.txtAyat.setText(data.nama);
         holder.txtInfo.setText(data.type + " - " + data.ayat + " Ayat ");
         holder.txtName.setText(data.asma);
-        holder.cvSurah.setOnClickListener(v -> onSelectData.onSelected(data));
+        holder.cvSurah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSelectData.onSelected(data);
+            }
+        });
     }
 
     @Override

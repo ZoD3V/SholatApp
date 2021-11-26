@@ -1,6 +1,9 @@
 package yayasan.idn.sholatapp.model
 
-class ModelSurah {
+import java.io.Serializable
+
+class ModelSurah : Serializable {
+
     var arti: String? = null
 
     @JvmField

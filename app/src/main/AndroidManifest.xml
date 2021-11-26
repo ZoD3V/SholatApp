@@ -16,8 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SholatApp">
         <activity
+            android:name=".alquran.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".alquran.ListQuranActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".KiblatActivity"
             android:exported="true"

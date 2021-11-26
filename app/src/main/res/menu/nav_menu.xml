@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_shalat"
-        android:icon="@drawable/quran"
-        android:title="Shalat"
-        app:showAsAction="ifRoom"/>
-    <item
-        app:showAsAction="ifRoom"
-        android:title="" />
-    <item
-        android:id="@+id/nav_dzikr"
-        app:showAsAction="ifRoom"
+        android:id="@+id/nav_dzikir"
         android:icon="@drawable/dzikir"
-        android:title="dzikir" />
+        android:title="Dzikir" />
+    <item
+        android:id="@+id/nav_shalat"
+        android:icon="@drawable/shalat"
+        android:title="Shalat" />
+    <item
+        android:id="@+id/nav_quran"
+        android:icon="@drawable/quran"
+        android:title="Quran" />
 </menu>

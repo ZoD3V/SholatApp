@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ayat_frame"/>
         <TextView
+            android:id="@+id/tvNomorAyat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
             android:textColor="@color/white"
             android:layout_marginTop="1dp"
             android:fontFamily="@font/poppinsmedium"
@@ -33,11 +33,11 @@
         android:orientation="vertical"
         android:paddingLeft="20dp">
         <TextView
+            android:id="@+id/tvArabic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:lineHeight="21dp"
-            android:text="بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِبِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ"
             android:fontFamily="@font/poppinsbold"
             android:textColor="@color/white"
             android:textAlignment="textStart"
@@ -48,14 +48,13 @@
             android:layout_marginVertical="5dp"
             android:background="@color/white" />
         <TextView
+            android:id="@+id/tvTerjemahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="13dp"
             android:lineHeight="21dp"
-            android:text="ayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha PenyayangDengan nama Allah Yang Maha Pengasih, Maha Penyayang............asasasasa"
             android:fontFamily="@font/poppinsbold"
             android:textColor="@color/white"
-
             android:textAlignment="textStart"
             />
     </LinearLayout>
