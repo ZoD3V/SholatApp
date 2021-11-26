@@ -29,6 +29,7 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quran)
 
+
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.decorView.apply {
@@ -39,9 +40,9 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
 
+        rvSurah.isNestedScrollingEnabled = false
         rvSurah.layoutManager = LinearLayoutManager(this)
         rvSurah.setHasFixedSize(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         listSurah()
     }
 
@@ -83,10 +84,6 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
     private fun showListSurah() {
         surahAdapter = SurahAdapter(this@ListQuranActivity, modelSurah, this)
         rvSurah!!.adapter = surahAdapter
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 
     override fun onSelected(modelSurah: ModelSurah) {

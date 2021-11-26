@@ -44,8 +44,11 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_quran)
 
+        rvAyat.isNestedScrollingEnabled = false
+
         //set toolbar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
 
         mHandler = Handler()
 

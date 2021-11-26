@@ -392,10 +392,48 @@
             </LinearLayout>
         </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+         <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_gravity="bottom"
+            android:id="@+id/navBar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4FADBB"
+            app:fabAlignmentMode="center"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:hideOnScroll="true"
+            app:fabCradleMargin="10dp"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navBar"
+                android:layout_width="match_parent"
+                app:labelVisibilityMode="unlabeled"
+                app:itemIconSize="35dp"
+                android:background="#00ffffff"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                app:itemRippleColor="@android:color/transparent"
+                app:menu="@menu/nav_menu"/>
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:background="@color/white"
+            android:elevation="4dp"
+            app:backgroundTint="#4FADBB"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/shalat_big"
+            app:maxImageSize="38dp"
+            app:layout_anchor="@+id/navBar" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <!--    </com.google.android.material.card.MaterialCardView>-->
 
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <androidx.cardview.widget.CardView
         android:id="@+id/card_date"
         android:layout_width="0dp"

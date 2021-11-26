@@ -7,9 +7,7 @@
         android:icon="@drawable/dzikir"
         android:title="Dzikir" />
     <item
-        android:id="@+id/nav_shalat"
-        android:icon="@drawable/shalat"
-        android:title="Shalat" />
+        android:title="" />
     <item
         android:id="@+id/nav_quran"
         android:icon="@drawable/quran"

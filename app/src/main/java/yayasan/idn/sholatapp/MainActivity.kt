@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        navBar.setBackground(null)
+
+
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.decorView.apply {
@@ -168,7 +171,7 @@ class MainActivity : AppCompatActivity() {
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°C"
         val iconWeather = response.getJSONArray("weather").getJSONObject(0).getString("icon")
-        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2xx.png"
+        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
         Picasso.get().load(iconUrl).into(icn_weather)
     }
 }
