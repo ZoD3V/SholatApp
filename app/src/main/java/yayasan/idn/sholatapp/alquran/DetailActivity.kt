@@ -1,6 +1,7 @@
 package yayasan.idn.sholatapp.alquran
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Build
@@ -9,6 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.Html
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androidnetworking.AndroidNetworking
@@ -16,8 +18,10 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
 import kotlinx.android.synthetic.main.activity_detail_quran.*
+import kotlinx.android.synthetic.main.activity_pagi.*
 import org.json.JSONArray
 import org.json.JSONException
+import yayasan.idn.sholatapp.MainActivity
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.AyatAdapter
 import yayasan.idn.sholatapp.apiquran.Api
@@ -44,11 +48,18 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_quran)
 
+        //hide status bar
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.decorView.apply {
+            // Hide both the navigation bar and the status bar.
+            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+            // a general rule, you should design your app to hide the status bar whenever you
+            // hide the navigation bar.
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        }
+
         rvAyat.isNestedScrollingEnabled = false
-
-
-        mHandler = Handler()
-
+        
         modelSurah = intent.getSerializableExtra("detailSurah") as ModelSurah?
         if (modelSurah != null) {
             nomor = modelSurah!!.nomor
@@ -59,14 +70,45 @@ class DetailActivity : AppCompatActivity() {
             audio = modelSurah!!.audio
             keterangan = modelSurah!!.keterangan
 
+            fabStop.visibility = View.GONE
+            fabPlay.visibility = View.VISIBLE
+
             //Set text
             tvTitle.text = nama
             tvSubTitle.text = arti
             tvInfo.text = "$type - $ayat Ayat "
 
+
+            //get & play Audio
+            val mediaPlayer = MediaPlayer()
+            fabPlay.setOnClickListener(View.OnClickListener {
+                try {
+                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
+                    mediaPlayer.setDataSource(audio)
+                    mediaPlayer.prepare()
+                    mediaPlayer.start()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+                fabPlay.visibility = View.GONE
+                fabStop.visibility = View.VISIBLE
+            })
+
+            fabStop.setOnClickListener(View.OnClickListener {
+                mediaPlayer.stop()
+                mediaPlayer.reset()
+                fabPlay.visibility = View.VISIBLE
+                fabStop.visibility = View.GONE
+            })
         }
         rvAyat.layoutManager = LinearLayoutManager(this)
         rvAyat.setHasFixedSize(true)
+
+        backtol.setOnClickListener {
+            val i = Intent(this, ListQuranActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(i)
+        }
 
         //Methods get data
         listAyat()
@@ -91,13 +133,13 @@ class DetailActivity : AppCompatActivity() {
                             showListAyat()
                         } catch (e: JSONException) {
                             e.printStackTrace()
-                            Toast.makeText(this@DetailActivity, "Gagal menampilkan data!",
+                            Toast.makeText(this@DetailActivity, "Failed Show Data!",
                                 Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
                 override fun onError(anError: ANError) {
-                    Toast.makeText(this@DetailActivity, "Tidak ada jaringan internet!",
+                    Toast.makeText(this@DetailActivity, "Nothing Internet",
                         Toast.LENGTH_SHORT).show()
                 }
             })
@@ -106,9 +148,5 @@ class DetailActivity : AppCompatActivity() {
     private fun showListAyat() {
         ayatAdapter = AyatAdapter(this@DetailActivity, modelAyat)
         rvAyat!!.adapter = ayatAdapter
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 }

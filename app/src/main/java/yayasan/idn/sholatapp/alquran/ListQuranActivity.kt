@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quran.*
 import org.json.JSONArray
 import org.json.JSONException
+import yayasan.idn.sholatapp.MainActivity
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.SurahAdapter
 import yayasan.idn.sholatapp.apiquran.Api
@@ -29,6 +30,11 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quran)
 
+        backtoh.setOnClickListener {
+            val i = Intent(this, MainActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(i)
+        }
 
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -40,7 +46,6 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
 
-        rvSurah.isNestedScrollingEnabled = false
         rvSurah.layoutManager = LinearLayoutManager(this)
         rvSurah.setHasFixedSize(true)
         listSurah()
@@ -92,4 +97,3 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         startActivity(intent)
     }
 }
-

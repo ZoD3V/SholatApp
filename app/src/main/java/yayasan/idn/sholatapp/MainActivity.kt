@@ -16,6 +16,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_quran.*
 import org.json.JSONObject
 import yayasan.idn.sholatapp.alquran.ListQuranActivity
 import java.time.LocalDate
@@ -28,9 +29,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navBar.setBackground(null)
+        navBar.background = null
 
-
+        navBar.selectedItemId = R.id.nav_dzikir
+        navBar.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_quran -> {
+                    startActivity(Intent(this,ListQuranActivity::class.java))
+                }
+                R.id.nav_dzikir -> {
+                }
+            }
+            true
+        }
         //hide status bar
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.decorView.apply {
@@ -66,10 +77,6 @@ class MainActivity : AppCompatActivity() {
 
         kiblat_btn.setOnClickListener{
             startActivity(Intent(this,KiblatActivity::class.java))
-        }
-
-        movequran.setOnClickListener {
-            startActivity(Intent(this,ListQuranActivity::class.java))
         }
 
         //show day
