@@ -412,6 +412,7 @@
                 app:labelVisibilityMode="unlabeled"
                 app:itemIconSize="35dp"
                 android:background="#00ffffff"
+                app:itemIconTint="@color/white"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 app:itemRippleColor="@android:color/transparent"
