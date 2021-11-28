@@ -72,10 +72,6 @@
                 android:textColor="@color/white"
                 android:textSize="21dp"
                 android:fontFamily="@font/semibold" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/movequran"/>
 
             <TextView
                 android:id="@+id/weather"
@@ -410,10 +406,10 @@
                 app:labelVisibilityMode="unlabeled"
                 app:itemIconSize="35dp"
                 android:background="#00ffffff"
-                app:itemIconTint="@color/white"
+                app:itemIconTint="@drawable/item_selector"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
-                app:itemRippleColor="@android:color/transparent"
+                app:itemRippleColor="#25000000"
                 app:menu="@menu/nav_menu"/>
 
 
