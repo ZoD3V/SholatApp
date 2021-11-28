@@ -1,64 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="245dp"
-            android:background="@drawable/backrgound_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/backrgound_view"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="20dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                app:tint="@android:color/white"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_back_24"/>
 
             <TextView
+
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+
                 android:fontFamily="@font/backslash"
-                android:shadowColor="#25000000"
-                android:shadowDy="5"
+                android:shadowColor="#40000000"
+                android:shadowDy="12"
                 android:shadowRadius="5"
                 android:text="Dzikir"
-                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="50dp" />
+                android:textSize="55dp" />
+        </LinearLayout>
 
-            <TextView
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#669DBB"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="3dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/backslash"
-                android:text="kumpulan dzikir harian"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:orientation="horizontal">
 
-            <View
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingVertical="26dp"
+                    android:paddingLeft="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_hadits"
+                        android:letterSpacing="0.05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="“Hai orang-orang yang beriman, berzikirlah (dengan menyebut nama) Allah, dzikir yang sebanyak-banyaknya. Dan bertasbihlah kepada-Nya di waktu pagi dan petang.” "
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_riwayat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="(Q.S. An-Nisa’ 103)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="11.5dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:paddingRight="3dp"
+                    android:src="@drawable/quran_img" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            app:cardElevation="15dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/dzikir_bg"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/dzikir_bg"
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginHorizontal="65dp"
-                android:layout_marginBottom="60dp"
-                android:background="@drawable/kiblat_rounded" />
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/pagi"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dzikir Pagi"
+                android:textColor="@color/black"
+                android:fontFamily="@font/backslash"
+                android:textSize="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mulai Berdzikir"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/backslash"
+                    android:textColor="@color/white"
+                    android:background="@drawable/dzikir_bg2"
+                    android:paddingVertical="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="15dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/dzikir_bg"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/dzikir_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/sore"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir Petang"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/backslash"
+                    android:textSize="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mulai Berdzikir"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/backslash"
+                    android:textColor="@color/white"
+                    android:background="@drawable/dzikir_bg2"
+                    android:paddingVertical="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginBottom="30dp"
+            app:cardElevation="15dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/dzikir_bg"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/dzikir_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/solat"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir Shalat"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/backslash"
+                    android:textSize="25dp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mulai Berdzikir"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/backslash"
+                    android:textColor="@color/white"
+                    android:background="@drawable/dzikir_bg2"
+                    android:paddingVertical="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
-    </FrameLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

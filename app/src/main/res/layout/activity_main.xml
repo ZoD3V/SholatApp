@@ -9,7 +9,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="280dp"
         android:background="@drawable/weather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +71,7 @@
                 android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:textSize="21dp"
-                android:textStyle="bold" />
-
+                android:fontFamily="@font/semibold" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,10 +86,9 @@
                 android:shadowDy="3"
                 android:shadowRadius="8"
                 android:text="-----"
-                android:layout_marginTop="8dp"
                 android:textColor="@color/white"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/poppinsmedium" />
         </LinearLayout>
 
 

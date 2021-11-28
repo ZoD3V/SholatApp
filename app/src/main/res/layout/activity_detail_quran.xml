@@ -110,7 +110,6 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
     <androidx.recyclerview.widget.RecyclerView
-
         android:id="@+id/rvAyat"
         android:layout_width="match_parent"
         tools:listitem="@layout/list_detail_quran"
