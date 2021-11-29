@@ -31,8 +31,8 @@
         <entry key="app/src/main/res/layout/activity_detail_quran.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_kiblat.xml" value="0.2065972222222222" />
         <entry key="app/src/main/res/layout/activity_list_quran.xml" value="0.18556701030927836" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_pagi.xml" value="0.19274349871101396" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_pagi.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_quran.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/bottom_menu.xml" value="0.19305555555555556" />
@@ -44,6 +44,7 @@
         <entry key="app/src/main/res/layout/list_activity_quran.xml" value="0.16731037211761435" />
         <entry key="app/src/main/res/layout/list_detail_quran.xml" value="0.25" />
         <entry key="app/src/main/res/layout/loading_item.xml" value="0.75" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.27546296296296297" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.20347222222222222" />
         <entry key="app/src/main/res/menu/search_menu.xml" value="0.20446735395189003" />
       </map>

@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quran.*
 import org.json.JSONObject
 import yayasan.idn.sholatapp.alquran.ListQuranActivity
+import yayasan.idn.sholatapp.dzikir.DzikirHomeActivity
 import java.time.LocalDate
 import java.util.*
 
@@ -31,13 +32,13 @@ class MainActivity : AppCompatActivity() {
 
         navBar.background = null
 
-        navBar.selectedItemId = R.id.nav_dzikir
         navBar.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_quran -> {
                     startActivity(Intent(this,ListQuranActivity::class.java))
                 }
                 R.id.nav_dzikir -> {
+                    startActivity(Intent(this,DzikirHomeActivity::class.java))
                 }
             }
             true
