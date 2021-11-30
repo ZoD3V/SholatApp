@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
             android:textColor="@color/black"
-            android:textSize="13dp"
+            android:textSize="14dp"
             android:text="Dengan nama Allah Yang Maha Pengasih, Maha Penyayang"/>
     </LinearLayout>
 

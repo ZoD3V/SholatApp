@@ -34,12 +34,18 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_pagi.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_quran.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sholat.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/layout/activity_sore.xml" value="0.19067028985507245" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/bottom_menu.xml" value="0.19305555555555556" />
         <entry key="app/src/main/res/layout/circular_progress.xml" value="0.18022234124227723" />
         <entry key="app/src/main/res/layout/detail_quran.xml" value="0.19305555555555556" />
         <entry key="app/src/main/res/layout/dzikir.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.11388888888888889" />
+        <entry key="app/src/main/res/layout/fragment_pagi.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/layout/fragment_petang.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/layout/fragment_shalat.xml" value="0.19067028985507245" />
+        <entry key="app/src/main/res/layout/home_dzikir.xml" value="0.19067028985507245" />
         <entry key="app/src/main/res/layout/list_actifity_quran.xml" value="0.4153819125674152" />
         <entry key="app/src/main/res/layout/list_activity_quran.xml" value="0.16731037211761435" />
         <entry key="app/src/main/res/layout/list_detail_quran.xml" value="0.25" />

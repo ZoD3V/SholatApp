@@ -11,6 +11,9 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -86,6 +89,8 @@ class MainActivity : AppCompatActivity() {
         val year = LocalDate.now().year
         tanggal.text = "$day, $month $year"
     }
+
+
 
     private fun automatedTheme(timeTheme:Int){
         if(timeTheme < 18){
