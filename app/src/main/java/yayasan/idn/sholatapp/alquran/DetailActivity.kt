@@ -18,7 +18,6 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONArrayRequestListener
 import kotlinx.android.synthetic.main.activity_detail_quran.*
-import kotlinx.android.synthetic.main.activity_pagi.*
 import org.json.JSONArray
 import org.json.JSONException
 import yayasan.idn.sholatapp.MainActivity
@@ -41,22 +40,17 @@ class DetailActivity : AppCompatActivity() {
     var modelSurah: ModelSurah? = null
     var ayatAdapter: AyatAdapter? = null
     var modelAyat: MutableList<ModelAyat> = ArrayList()
-    var mHandler: Handler? = null
 
     @SuppressLint("RestrictedApi", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_quran)
 
-        //hide status bar
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        window.decorView.apply {
-            // Hide both the navigation bar and the status bar.
-            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-            // a general rule, you should design your app to hide the status bar whenever you
-            // hide the navigation bar.
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
+//        //hide status bar
+        window
+            .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
 
         rvAyat.isNestedScrollingEnabled = false
         
@@ -77,7 +71,6 @@ class DetailActivity : AppCompatActivity() {
             tvTitle.text = nama
             tvSubTitle.text = arti
             tvInfo.text = "$type - $ayat Ayat "
-
 
             //get & play Audio
             val mediaPlayer = MediaPlayer()

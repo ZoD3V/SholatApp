@@ -47,14 +47,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
         //hide status bar
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        window.decorView.apply {
-            // Hide both the navigation bar and the status bar.
-            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-            // a general rule, you should design your app to hide the status bar whenever you
-            // hide the navigation bar.
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
+        window
+            .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val lat = intent.getDoubleExtra("lat", 0.0)
         val long = intent.getDoubleExtra("long",0.0)
         val el = intent.getStringExtra("el")
@@ -138,6 +134,7 @@ class MainActivity : AppCompatActivity() {
                 setValuesSholat(response)
             },
             { Toast.makeText(this,"Failed Show Data Sholat",Toast.LENGTH_LONG).show() })
+        queue.cache.clear()
         queue.add(jsonRequest)
     }
 
@@ -172,6 +169,7 @@ class MainActivity : AppCompatActivity() {
                 setValuesWeather(response,city)
             },
             { Toast.makeText(this,"Failed Show Data Weather",Toast.LENGTH_LONG).show() })
+        queue.cache.clear()
         queue.add(jsonRequest)
     }
 

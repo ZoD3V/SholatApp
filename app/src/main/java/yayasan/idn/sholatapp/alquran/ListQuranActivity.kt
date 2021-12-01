@@ -37,14 +37,9 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         }
 
         //hide status bar
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        window.decorView.apply {
-            // Hide both the navigation bar and the status bar.
-            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-            // a general rule, you should design your app to hide the status bar whenever you
-            // hide the navigation bar.
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        }
+        window
+            .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         rvSurah.layoutManager = LinearLayoutManager(this)
         rvSurah.setHasFixedSize(true)
