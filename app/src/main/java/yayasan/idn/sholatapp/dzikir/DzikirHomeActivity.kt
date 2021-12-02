@@ -7,6 +7,10 @@ import android.view.View
 import kotlinx.android.synthetic.main.home_dzikir.*
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.alquran.ListQuranActivity
+import yayasan.idn.sholatapp.MainActivity
+
+
+
 
 class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,18 +20,22 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
         dzikirpetang.setOnClickListener(this)
         dzikirsholat.setOnClickListener(this)
 
-
     }
 
     override fun onClick(v: View?) {
-        val intent = Intent(this,HomePrayerActivity::class.java)
         if (v != null) {
             if (v.id == R.id.dzikirpagi) {
-                startActivity(intent)
+                val i = Intent(this, HomePrayerActivity::class.java)
+                i.putExtra("index", 0)
+                startActivity(i)
             } else if (v.id == R.id.dzikirpetang) {
-                startActivity(intent)
+                val i = Intent(this, HomePrayerActivity::class.java)
+                i.putExtra("index", 1)
+                startActivity(i)
             } else if (v.id == R.id.dzikirsholat) {
-                startActivity(intent)
+                val i = Intent(this, HomePrayerActivity::class.java)
+                i.putExtra("index", 2)
+                startActivity(i)
             }
         }
     }
