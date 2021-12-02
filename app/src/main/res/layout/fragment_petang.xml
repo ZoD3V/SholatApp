@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
+                    android:id="@+id/backtohdzp"
                     app:tint="@color/white"
                     android:layout_marginTop="5dp"
                     android:layout_width="30dp"
@@ -37,7 +38,7 @@
                     android:textColor="@color/white"
                     android:textSize="35dp"
                     android:fontFamily="@font/backslash"
-                    android:text="Dzikir Pe"
+                    android:text="Dzikir Petang"
                     />
 
             </FrameLayout>

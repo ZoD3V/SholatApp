@@ -41,12 +41,14 @@
         <entry key="app/src/main/res/layout/dzikir.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.11388888888888889" />
         <entry key="app/src/main/res/layout/fragment_pagi.xml" value="0.1111111111111111" />
-        <entry key="app/src/main/res/layout/fragment_shalat.xml" value="0.1111111111111111" />
+        <entry key="app/src/main/res/layout/fragment_petang.xml" value="0.11805555555555555" />
+        <entry key="app/src/main/res/layout/fragment_shalat.xml" value="0.15655931460013536" />
         <entry key="app/src/main/res/layout/home_dzikir.xml" value="0.27854454171734816" />
         <entry key="app/src/main/res/layout/list_actifity_quran.xml" value="0.4153819125674152" />
         <entry key="app/src/main/res/layout/list_activity_quran.xml" value="0.16731037211761435" />
         <entry key="app/src/main/res/layout/list_detail_quran.xml" value="0.25" />
         <entry key="app/src/main/res/layout/loading_item.xml" value="0.75" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.11805555555555555" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.20347222222222222" />
         <entry key="app/src/main/res/menu/search_menu.xml" value="0.20446735395189003" />
       </map>

@@ -48,7 +48,7 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
 
     private fun listSurah() {
         AndroidNetworking.get(Api.URL_LIST_SURAH)
-            .setPriority(Priority.MEDIUM)
+            .setPriority(Priority.HIGH)
             .build()
             .getAsJSONArray(object : JSONArrayRequestListener {
                 override fun onResponse(response: JSONArray) {
