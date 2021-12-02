@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import yayasan.idn.sholatapp.R
+import yayasan.idn.sholatapp.adapter.viewPagerAdapter
 
 
 class PagiFragment : Fragment() {
@@ -29,5 +32,9 @@ class PagiFragment : Fragment() {
                 finish()
             }
         }
+
+        val viewPager = view.findViewById<ViewPager>(R.id.viewPager)
+
+        viewPager.adapter = viewPagerAdapter(childFragmentManager)
     }
 }

@@ -57,7 +57,7 @@
                 android:shadowRadius="5"
                 android:text="Dzikir"
                 android:textColor="@color/white"
-                android:textSize="55dp" />
+                android:textSize="52dp" />
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -94,7 +94,7 @@
                         android:text="“Hai orang-orang yang beriman, berzikirlah (dengan menyebut nama) Allah, dzikir yang sebanyak-banyaknya. Dan bertasbihlah kepada-Nya di waktu pagi dan petang.” "
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="10dp" />
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/tv_riwayat"
@@ -104,7 +104,7 @@
                         android:text="(Q.S. An-Nisa’ 103)"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="11.5dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <ImageView

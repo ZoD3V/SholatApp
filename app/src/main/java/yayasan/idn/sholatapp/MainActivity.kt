@@ -180,9 +180,9 @@ class MainActivity : AppCompatActivity() {
         weather.text=response.getJSONArray("weather").getJSONObject(0).getString("description")
         var tempr=response.getJSONObject("main").getString("temp")
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
-        temp.text= "${tempr}°C"
+        temp.text= "${tempr}°"
         val iconWeather = response.getJSONArray("weather").getJSONObject(0).getString("icon")
-        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
-        Picasso.get().load(iconUrl).into(icn_weather)
+//        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
+//        Picasso.get().load(iconUrl).into(icn_weather)
     }
 }

@@ -15,6 +15,8 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
         dzikirpagi.setOnClickListener(this)
         dzikirpetang.setOnClickListener(this)
         dzikirsholat.setOnClickListener(this)
+
+
     }
 
     override fun onClick(v: View?) {
@@ -34,4 +36,6 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
             }
         }
     }
+
+
 }
