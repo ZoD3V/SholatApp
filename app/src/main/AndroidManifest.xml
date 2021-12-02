@@ -16,6 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SholatApp">
         <activity
+            android:name=".dzikir.HomePrayerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyTheme"/>
+        <activity
             android:name=".dzikir.DzikirHomeActivity"
             android:exported="false"
             android:theme="@style/Theme.MyTheme" />

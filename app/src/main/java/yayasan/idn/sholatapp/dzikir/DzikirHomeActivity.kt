@@ -20,19 +20,14 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        val intent = Intent(this,HomePrayerActivity::class.java)
         if (v != null) {
             if (v.id == R.id.dzikirpagi) {
-                supportFragmentManager.beginTransaction().replace(R.id.movefrg, PagiFragment())
-                    .commit()
-                dzikirpagi.visibility = View.GONE
+                startActivity(intent)
             } else if (v.id == R.id.dzikirpetang) {
-                supportFragmentManager.beginTransaction().replace(R.id.movefrg, PetangFragment())
-                    .commit()
-                dzikirpetang.visibility = View.GONE
+                startActivity(intent)
             } else if (v.id == R.id.dzikirsholat) {
-                supportFragmentManager.beginTransaction().replace(R.id.movefrg, ShalatFragment())
-                    .commit()
-                dzikirsholat.visibility = View.GONE
+                startActivity(intent)
             }
         }
     }
