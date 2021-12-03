@@ -21,6 +21,7 @@ import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.SurahAdapter
 import yayasan.idn.sholatapp.apiquran.Api
 import yayasan.idn.sholatapp.model.ModelSurah
+import yayasan.idn.sholatapp.util.LoadingDialog
 
 class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
     var surahAdapter: SurahAdapter? = null
@@ -30,6 +31,10 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quran)
 
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed({ loading.isDismiss() },2000)
         backtoh.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)
             i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP

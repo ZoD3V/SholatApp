@@ -20,6 +20,12 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
         dzikirpetang.setOnClickListener(this)
         dzikirsholat.setOnClickListener(this)
 
+        backtohw.setOnClickListener {
+            val i = Intent(this, MainActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(i)
+        }
+
     }
 
     override fun onClick(v: View?) {

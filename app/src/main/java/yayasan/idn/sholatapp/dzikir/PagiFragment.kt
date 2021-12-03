@@ -7,8 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import yayasan.idn.sholatapp.R
 
 
@@ -24,6 +22,8 @@ class PagiFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //loading
+
         val back = view.findViewById<ImageView>(R.id.backtohdz)
         back.setOnClickListener{
             requireActivity().run{

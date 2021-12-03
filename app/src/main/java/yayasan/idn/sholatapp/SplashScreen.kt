@@ -22,13 +22,10 @@ import java.util.*
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
-    private lateinit var mfusedlocation:FusedLocationProviderClient
     private var myRequestCode = 1010
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
-        mfusedlocation = LocationServices.getFusedLocationProviderClient(this)
         getLastLocation()
     }
 
@@ -36,47 +33,15 @@ class SplashScreen : AppCompatActivity() {
     private fun getLastLocation() {
         if (CheckPermission()){
             if (LocationEnabled()){
-                mfusedlocation.lastLocation.addOnCompleteListener {
-                    task ->
-                    var location:Location? = task.result
-                    if (location == null){
-                        NewLocation()
-                        Toast.makeText(this,"No location, can't go further without location",
-                        Toast.LENGTH_SHORT).show()
-                    }else{
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            val intent = Intent(this,MainActivity::class.java)
-                            intent.putExtra("lat",location.latitude)
-                            intent.putExtra("long",location.longitude)
-                            intent.putExtra("el",location.altitude.toString())
-
-                            startActivity(intent)
-                            finish()
-                        },2000)
-                    }
-                }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    startActivity(Intent(this,MainActivity::class.java))
+                    finish()
+                },1000)
             }else{
                 Toast.makeText(this,"Please Turn On Your GPS LOCATION",Toast.LENGTH_SHORT).show()
             }
         }else{
             RequestPermission()
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    private fun NewLocation() {
-        var locationRequest = LocationRequest()
-        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-        locationRequest.interval = 0
-        locationRequest.fastestInterval = 0
-        locationRequest.numUpdates = 1
-        mfusedlocation = LocationServices.getFusedLocationProviderClient(this)
-        mfusedlocation.requestLocationUpdates(locationRequest,locationCallback,Looper.myLooper())
-    }
-
-    private val locationCallback = object:LocationCallback(){
-        override fun onLocationResult(p0: LocationResult) {
-            var lastLocation:Location = p0.lastLocation
         }
     }
 

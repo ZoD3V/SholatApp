@@ -11,7 +11,7 @@ class LoadingDialog(val mActivity:Activity) {
     //set loadng
     @SuppressLint("InflateParams")
     fun startLoading(){
-         //setview
+        //setview
         val infalter = mActivity.layoutInflater
         val dialog = infalter.inflate(R.layout.loading_item,null)
 

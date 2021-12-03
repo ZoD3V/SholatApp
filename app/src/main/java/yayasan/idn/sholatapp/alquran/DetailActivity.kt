@@ -4,11 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.text.Html
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -20,12 +18,12 @@ import com.androidnetworking.interfaces.JSONArrayRequestListener
 import kotlinx.android.synthetic.main.activity_detail_quran.*
 import org.json.JSONArray
 import org.json.JSONException
-import yayasan.idn.sholatapp.MainActivity
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.AyatAdapter
 import yayasan.idn.sholatapp.apiquran.Api
 import yayasan.idn.sholatapp.model.ModelAyat
 import yayasan.idn.sholatapp.model.ModelSurah
+import yayasan.idn.sholatapp.util.LoadingDialog
 import java.io.IOException
 
 class DetailActivity : AppCompatActivity() {
@@ -45,6 +43,12 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_quran)
+
+        //loading
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed({ loading.isDismiss() },2000)
 
 //        //hide status bar
         window
