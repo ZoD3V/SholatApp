@@ -31,5 +31,7 @@ class PagiFragment : Fragment() {
                 finish()
             }
         }
+
+
     }
 }

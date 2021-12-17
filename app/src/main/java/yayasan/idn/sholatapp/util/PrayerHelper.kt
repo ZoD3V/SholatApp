@@ -83,10 +83,10 @@ class PrayerHelper(private val aP:Activity) {
         tempr=((((tempr).toFloat()-273.15)).toInt()).toString()
         temp.text= "${tempr}°"
 
-        val icn_weather = this.aP.findViewById<ImageView>(R.id.icn_weather)
-        val iconWeather = response.getJSONArray("weather").getJSONObject(0).getString("icon")
-        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
-        Picasso.get().load(iconUrl).into(icn_weather)
+//        val icn_weather = this.aP.findViewById<ImageView>(R.id.icn_weather)
+//        val iconWeather = response.getJSONArray("weather").getJSONObject(0).getString("icon")
+//        val iconUrl = "https://openweathermap.org/img/wn/$iconWeather@2x.png"
+//        Picasso.get().load(iconUrl).into(icn_weather)
     }
 
 

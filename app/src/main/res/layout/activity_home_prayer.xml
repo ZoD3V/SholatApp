@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,6 +10,12 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:tabBackground="@color/kuning"
+        app:tabTextColor="@color/black"
+
+        android:translationZ="999dp"
+        android:layout_marginTop="55dp"
+        app:tabSelectedTextColor="@color/white"
         android:id="@+id/tab_layout"/>
 
     <androidx.viewpager2.widget.ViewPager2
@@ -17,4 +23,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tab_layout" />
-</RelativeLayout>
+</FrameLayout>

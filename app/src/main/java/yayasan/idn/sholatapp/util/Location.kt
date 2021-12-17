@@ -16,21 +16,22 @@ import yayasan.idn.sholatapp.MainActivity
 import java.util.*
 
 class Location(val aL:Activity):AppCompatActivity() {
+
     companion object{
         private const val REQUEST_PERMISSION_REQUEST_CODE = 2020
     }
+
     @SuppressLint("MissingPermission")
     fun getCurrentLocation() {
-
         val locationRequest = LocationRequest()
         locationRequest.interval = 10000
         locationRequest.fastestInterval = 5000
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
 
-        //now getting address from latitude and longitude
-
+        //getting address from latitude and longitude
         val geocoder = Geocoder(aL, Locale.getDefault())
         var addresses: List<Address>
+        var address = ""
 
         LocationServices.getFusedLocationProviderClient(aL)
             .requestLocationUpdates(locationRequest, object : LocationCallback() {
@@ -43,9 +44,11 @@ class Location(val aL:Activity):AppCompatActivity() {
                         val latitude = locationResult.locations[locIndex].latitude
                         val longitude = locationResult.locations[locIndex].longitude
                         val altitude = locationResult.locations[locIndex].altitude
-
-                        addresses = geocoder.getFromLocation(latitude, longitude, 1)
-                        val address: String = addresses[0].subLocality
+                        try {
+                            addresses = geocoder.getFromLocation(latitude, longitude, 1)
+                            address = addresses[0].subLocality
+                        }catch (ignored:RuntimeException){
+                        }
                         val prayer = PrayerHelper(aL)
                         prayer.getWeather(latitude.toString(),longitude.toString(),address)
                         prayer.getSholat(latitude.toString(),longitude.toString(),altitude.toString())

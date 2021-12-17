@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import kotlinx.android.synthetic.main.home_dzikir.*
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.alquran.ListQuranActivity
@@ -19,6 +20,10 @@ class DzikirHomeActivity : AppCompatActivity(),View.OnClickListener {
         dzikirpagi.setOnClickListener(this)
         dzikirpetang.setOnClickListener(this)
         dzikirsholat.setOnClickListener(this)
+        window
+            .setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         backtohw.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)

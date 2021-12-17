@@ -1,550 +1,524 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FDFEFF"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp">
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/weather"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:paddingTop="45dp">
+
+            <ImageButton
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded_loc"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/loc" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/semibold"
+                    android:text="Sunday , 5 dec"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/regular"
+                    android:text="13 Ramadhan 1442 H"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/kiblat_btn"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:background="@drawable/rounded_com"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/com" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="177dp"
+            app:cardCornerRadius="15dp"
+            android:layout_marginTop="13dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/morning" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="55.29dp"
+                        android:layout_height="51.93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/dhuha"
+                        app:tint="@color/white"
+                        />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="30°"
+                                android:textColor="@color/white"
+                                android:textSize="25dp"
+                                android:fontFamily="@font/semibold"/>
+                            <TextView
+                                android:id="@+id/weather"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cloudy"
+                                android:layout_marginTop="-5dp"
+                                android:textColor="@color/white"
+                                android:textSize="17dp"
+                                android:fontFamily="@font/poppinsmedium"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsbold"
+                    android:text="11 : 11"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/icn_weather"
-                        android:layout_width="68dp"
-                        android:src="@drawable/dhuha"
-                        android:layout_height="68dp" />
+                        android:layout_width="11dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="11dp"
+                        android:src="@drawable/loc"
+                        app:tint="@color/white" />
 
                     <TextView
-                        android:id="@+id/temp"
-                        android:layout_marginTop="5dp"
+                        android:id="@+id/city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="25dp"
-                        android:layout_weight="2"
-                        android:shadowColor="@color/shadow"
-                        android:shadowDx="0"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:shadowDy="5"
-                        android:shadowRadius="8"
-                        android:text="--°"
+                        android:fontFamily="@font/regular"
+                        android:text="Bogor , Jawa Barat"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="45dp" />
-
-                    <ImageButton
-                        android:id="@+id/kiblat_btn"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="25dp"
-                        android:background="@drawable/kiblat_rounded"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/kiblat" />
-
+                        android:textSize="14dp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/city"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/semibold"
-                    android:shadowColor="@color/shadow"
-                    android:shadowDx="0"
-                    android:shadowDy="3"
 
-                    android:shadowRadius="8"
-                    android:text="-----"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/weather"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:shadowColor="@color/shadow"
-                    android:shadowDx="0"
-                    android:shadowDy="3"
-                    android:shadowRadius="8"
-                    android:text="-----"
-                    android:textColor="@color/white"
-                    android:textSize="18dp" />
             </LinearLayout>
-
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </FrameLayout>
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Sebentar lagi : "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
 
-        <!--    <com.google.android.material.card.MaterialCardView-->
-        <!--        android:id="@+id/materialCardView"-->
-        <!--        android:layout_width="0dp"-->
-        <!--        android:layout_height="679dp"-->
-        <!--        app:cardCornerRadius="65dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/guideline2">-->
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/rounded_home"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:background="@drawable/rounded_home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.core.widget.NestedScrollView
-                android:id="@+id/scroll"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/semibold"
+                android:text="Dzuhur"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+        </LinearLayout>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="25dp">
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat1"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginTop="55dp"
-                        android:layout_marginBottom="60px"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/shubuh" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="@string/waktu_shubuh"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/shubuh"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat2"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginBottom="60px"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/dhuha" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="@string/waktu_dhuha"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/dhuha"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat3"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginBottom="60px"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/dzuhur" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="Waktu Dzuhur"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/dzuhur"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat4"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginBottom="60px"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ashar" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="@string/waktu_ashar"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/ashar"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat5"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginBottom="60px"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/maghrib" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginRight="12dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="@string/waktu_maghrib"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="18dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/maghrib"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/list_shalat6"
-                        android:layout_width="match_parent"
-                        android:layout_height="95dp"
-                        android:layout_marginBottom="65dp"
-                        android:background="@drawable/list_shalat"
-                        android:elevation="5dp"
-                        android:padding="20dp">
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:src="@drawable/isya" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/semibold"
-                            android:text="@string/waktu_isya"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:background="@color/white" />
-
-                        <TextView
-                            android:id="@+id/isya"
-                            android:layout_width="55dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/semibold"
-
-                            android:text="--:--"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="19dp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
-
-            <com.google.android.material.bottomappbar.BottomAppBar
-                android:id="@+id/navBar1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:backgroundTint="#7B8FBB"
-                android:padding="3dp"
-                app:fabAlignmentMode="center"
-                app:fabCradleMargin="10dp"
-                app:fabCradleRoundedCornerRadius="50dp"
-                app:hideOnScroll="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/navBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:background="#00ffffff"
-                    app:itemIconSize="35dp"
-                    app:itemIconTint="@drawable/item_selector"
-                    app:itemRippleColor="#25000000"
-                    app:labelVisibilityMode="unlabeled"
-                    app:menu="@menu/nav_menu" />
-
-
-            </com.google.android.material.bottomappbar.BottomAppBar>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:elevation="4dp"
-                android:tint="@color/white"
-                app:backgroundTint="#7B8FBB"
-                app:layout_anchor="@+id/navBar"
-                app:maxImageSize="30dp"
-                app:srcCompat="@drawable/masjid"
-                app:tint="@color/white" />
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-        <!--   -->
-
-
-        <!--    </LinearLayout>-->
-    </LinearLayout>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_date"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:layout_margin="20dp"
-        app:cardElevation="12dp"
-        app:cardBackgroundColor="@color/white"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="5dp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tanggal"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
 
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textAlignment="center"
-                android:paddingStart="20dp"
-                android:textSize="17dp"
-                android:fontFamily="@font/semibold"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line"/>
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
 
-            <TextView
-                android:id="@+id/weltext"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="SHUBUH"/>
+                    <TextView
+                        android:id="@+id/shubuh"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_shubuh"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="#838383"
-                android:textAlignment="center"
-                android:fontFamily="@font/semibold"
-                android:textSize="17dp"
-                android:layout_marginHorizontal="25dp"
-                android:layout_weight="20"/>
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="SYURUK"/>
+                    <TextView
+                        android:id="@+id/syuruk"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_syuruk"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="DHUHA"/>
+                    <TextView
+                        android:id="@+id/dhuha"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_dhuha"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="DZUHUR"/>
+                    <TextView
+                        android:id="@+id/dzuhur"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_dzuhur"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="ASHAR"/>
+                    <TextView
+                        android:id="@+id/ashar"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_ashar"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="MAGHRIB"/>
+                    <TextView
+                        android:id="@+id/maghrib"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_maghrib"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="21dp"
+                app:cardBackgroundColor="#E5FAFF"
+                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="22dp"
+                    android:paddingBottom="19dp"
+                    android:paddingTop="19dp"
+
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="ISYA"/>
+                    <TextView
+                        android:id="@+id/isya"
+                        android:layout_weight="2"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"
+                        android:text="-- : --"/>
+                    <Switch
+
+                        android:id="@+id/alarm_isya"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/navBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#23B9DD"
+        android:padding="3dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:hideOnScroll="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:background="#00ffffff"
+            app:itemIconSize="35dp"
+            app:itemIconTint="@drawable/item_selector"
+            app:itemRippleColor="#25000000"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/nav_menu" />
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="548dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3392613" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="-1dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="330dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:tint="@color/white"
+        app:backgroundTint="#23B9DD"
+        app:layout_anchor="@+id/navBar"
+        app:maxImageSize="28dp"
+        app:srcCompat="@drawable/waktu_logo"
+        app:tint="@color/white" />
+    <View
+        android:id="@+id/circle"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
