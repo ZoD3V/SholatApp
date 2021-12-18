@@ -5,264 +5,309 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+    android:background="#FAFDFF">
 
     <FrameLayout
-    android:id="@+id/frameLayout2"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/backrgound_view"
-    android:paddingHorizontal="20dp"
-    android:paddingTop="40dp"
-    android:paddingBottom="20dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <LinearLayout
+        android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/bg_title"
+
+        android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/circle_2"
+        android:translationX="-33dp"
+        android:translationY="50dp"
+        android:layout_gravity="bottom|right"/>
+    <View
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:background="@drawable/circle_1"
+        android:translationX="34dp"
+        android:translationY="35dp"
+        android:layout_gravity="bottom|right"/>
+    <View
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:background="@drawable/circle_3"
+        android:translationX="-50dp"
+        android:translationY="-42dp"
+        android:layout_gravity="top|left"/>
+    <View
+        android:layout_width="131dp"
+        android:layout_height="131dp"
+        android:background="@drawable/circle_3"
+        android:translationX="84dp"
+        android:translationY="-57dp"
+        android:layout_gravity="top|right"/>
+        <ImageView
+            android:id="@+id/backtohw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrows"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="18dp"
+            app:tint="@color/black"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/backtohw"
-                android:layout_marginBottom="5dp"
-                android:layout_width="41dp"
-                android:layout_height="41dp"
-                app:tint="@android:color/white"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_arrow_back_24"/>
-
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:paddingVertical="51dp"
+            android:paddingHorizontal="59dp"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="@font/semibold"
-                android:shadowColor="#40000000"
-                android:shadowDy="12"
-                android:shadowRadius="5"
-                android:text="Dzikir"
-                android:textColor="@color/white"
-                android:textSize="52dp" />
-        </LinearLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#669DBB"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:strokeColor="@color/white"
-            app:strokeWidth="3dp">
-
-            <LinearLayout
+                android:text="Doa &amp; Dzikir"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppinsbold"/>
+            <TextView
+                android:id="@+id/tv_hadits"
+                android:layout_gravity="center"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="26dp"
-                    android:paddingLeft="12dp">
-
-                    <TextView
-                        android:id="@+id/tv_hadits"
-                        android:letterSpacing="0.05"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="@font/semibold"
-                        android:text="“Hai orang-orang yang beriman, berzikirlah (dengan menyebut nama) Allah, dzikir yang sebanyak-banyaknya. Dan bertasbihlah kepada-Nya di waktu pagi dan petang.” "
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="11dp" />
-
-                    <TextView
-                        android:id="@+id/tv_riwayat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsbold"
-                        android:text="(Q.S. An-Nisa’ 103)"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="13dp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="2"
-                    android:paddingRight="3dp"
-                    android:src="@drawable/dzikir_logo" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-</FrameLayout>
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/black"
+                android:text="”Dan bertasbihlah seraya memuji Tuhanmu pada waktu sore dan pagi,”"/>
+            <TextView
+                android:id="@+id/tv_riwayat"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/black"
+                android:text="(QS. Ghafir: 55)"/>
+        </LinearLayout>
+    </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_below="@id/frame">
         <androidx.cardview.widget.CardView
-            app:cardElevation="15dp"
+            android:id="@+id/dzikirpagi"
             android:layout_width="match_parent"
-            app:cardCornerRadius="20dp"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/dzikir_bg"
-            android:layout_height="wrap_content">
+            app:cardBackgroundColor="#35D1F6"
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="123dp"
+                android:layout_height="123dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="right|top"
+                android:translationX="29dp"
+                android:translationY="-26dp"
+                />
             <ImageView
-                android:id="@+id/dzikirpagi"
-                android:src="@drawable/dzikir_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/dzuhur"
+                android:layout_gravity="right|top"
+                app:tint="@color/white"
+                android:translationY="16dp"
+                android:translationX="-12dp"/>
+            <View
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|top"
+                android:translationX="-33dp"
+                android:translationY="-18dp"
+                />
+            <View
+                android:layout_width="107dp"
+                android:layout_height="107dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="left|bottom"
+                android:translationX="-49dp"
+                android:translationY="43dp"
+                />
+            <View
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|bottom"
+                android:translationX="43dp"
+                android:translationY="7dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="36dp"
+                android:paddingHorizontal="21dp"
                 android:orientation="vertical">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/pagi"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dzikir Pagi"
-                android:textColor="@color/black"
-                android:fontFamily="@font/backslash"
-                android:textSize="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:textAlignment="center"/>
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mulai Berdzikir"
-                    android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/backslash"
+                    android:text="Dzikir Pagi"
                     android:textColor="@color/white"
-                    android:background="@drawable/dzikir_bg2"
-                    android:paddingVertical="8dp"/>
+                    android:fontFamily="@font/semibold"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hasan Al Hamid"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/regular"
+                    android:textSize="15dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            app:cardElevation="15dp"
+            android:id="@+id/dzikirpetang"
             android:layout_width="match_parent"
-            app:cardCornerRadius="20dp"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/dzikir_bg"
-            android:layout_height="wrap_content">
+            app:cardBackgroundColor="#35D1F6"
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="123dp"
+                android:layout_height="123dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="right|top"
+                android:translationX="29dp"
+                android:translationY="-26dp"
+                />
             <ImageView
-                android:id="@+id/dzikirpetang"
-                android:src="@drawable/dzikir_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"/>
+                android:layout_width="47dp"
+                android:layout_height="45dp"
+                android:src="@drawable/maghrib"
+                android:layout_gravity="right|top"
+                app:tint="@color/white"
+                android:translationY="16dp"
+                android:translationX="-12dp"/>
+            <View
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|top"
+                android:translationX="-33dp"
+                android:translationY="-18dp"
+                />
+            <View
+                android:layout_width="107dp"
+                android:layout_height="107dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="left|bottom"
+                android:translationX="-49dp"
+                android:translationY="43dp"
+                />
+            <View
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|bottom"
+                android:translationX="43dp"
+                android:translationY="7dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="36dp"
+                android:paddingHorizontal="21dp"
                 android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/sore"/>
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dzikir Petang"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/backslash"
-                    android:textSize="25dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mulai Berdzikir"
-                    android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/backslash"
                     android:textColor="@color/white"
-                    android:background="@drawable/dzikir_bg2"
-                    android:paddingVertical="8dp"/>
+                    android:fontFamily="@font/semibold"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hasan Al Hamid"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/regular"
+                    android:textSize="15dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
         <androidx.cardview.widget.CardView
-            android:layout_marginBottom="30dp"
-            app:cardElevation="15dp"
+            android:id="@+id/dzikirsholat"
             android:layout_width="match_parent"
-            app:cardCornerRadius="20dp"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/dzikir_bg"
-            android:layout_height="wrap_content">
+            app:cardBackgroundColor="#35D1F6"
+            app:cardCornerRadius="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="123dp"
+                android:layout_height="123dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="right|top"
+                android:translationX="29dp"
+                android:translationY="-26dp"
+                />
             <ImageView
-                android:id="@+id/dzikirsholat"
-                android:src="@drawable/dzikir_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"/>
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/shalat"
+                android:layout_gravity="right|top"
+                app:tint="@color/white"
+                android:translationY="18dp"
+                android:translationX="-12dp"/>
+            <View
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|top"
+                android:translationX="-33dp"
+                android:translationY="-18dp"
+                />
+            <View
+                android:layout_width="107dp"
+                android:layout_height="107dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="left|bottom"
+                android:translationX="-49dp"
+                android:translationY="43dp"
+                />
+            <View
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/circle_4"
+                android:layout_gravity="center|bottom"
+                android:translationX="43dp"
+                android:translationY="7dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="36dp"
+                android:paddingHorizontal="21dp"
                 android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/solat"/>
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dzikir Shalat"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/backslash"
-                    android:textSize="25dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_marginBottom="8dp"
-                    android:textAlignment="center"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mulai Berdzikir"
-                    android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/backslash"
                     android:textColor="@color/white"
-                    android:background="@drawable/dzikir_bg2"
-                    android:paddingVertical="8dp"/>
+                    android:fontFamily="@font/semibold"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hasan Al Hamid"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/regular"
+                    android:textSize="15dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
     </LinearLayout>
-    </ScrollView>
 </RelativeLayout>

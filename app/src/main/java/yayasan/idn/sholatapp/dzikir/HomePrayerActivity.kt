@@ -20,10 +20,10 @@ class HomePrayerActivity : AppCompatActivity() {
         view_pager2.adapter = StateAdapter(this)
         view_pager2.currentItem = index
 
-        val tabList = arrayOf("Dzikir Pagi","Dzikir Petang","Dzikir Shalat")
-        TabLayoutMediator(tab_layout,view_pager2){tabs,position ->
-            tabs.text = tabList[position]
-        }.attach()
+//        val tabList = arrayOf("Dzikir Pagi","Dzikir Petang","Dzikir Shalat")
+//        TabLayoutMediator(tab_layout,view_pager2){tabs,position ->
+//            tabs.text = tabList[position]
+//        }.attach()
 
     }
 }

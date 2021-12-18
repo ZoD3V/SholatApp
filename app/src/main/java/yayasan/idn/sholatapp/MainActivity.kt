@@ -18,6 +18,9 @@ import yayasan.idn.sholatapp.dzikir.DzikirHomeActivity
 import yayasan.idn.sholatapp.util.LoadingDialog
 import yayasan.idn.sholatapp.util.Location
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -77,9 +80,6 @@ class MainActivity : AppCompatActivity() {
         window
             .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        val calendar = Calendar.getInstance()
-        val timeOfDay = calendar.get(Calendar.HOUR_OF_DAY)
-
         val location = Location(this)
         try {
             location.getCurrentLocation()
@@ -93,12 +93,36 @@ class MainActivity : AppCompatActivity() {
         //show day
         val day = LocalDate.now().dayOfWeek.name
         val month = LocalDate.now().month.name
-        val year = LocalDate.now().year
-        val date = Calendar.getInstance().time
-        val dateInString = date.toString()
+        val date = LocalDate.now().dayOfMonth
+        val calendar = Calendar.getInstance()
+        val timenow = calendar.get(Calendar.HOUR_OF_DAY)
+
+        tv_datetoshow.text = "$day, $date $month"
+
+        val currentTime = LocalDateTime.now()
+        val timeNow = currentTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
+            .removeSuffix(" AM").removeSuffix(" PM")
+
+        tv_time.text = timeNow
+
+        prayerTimeText(timenow)
+
 
     }
 
-
+    @SuppressLint("SetTextI18n")
+    private fun prayerTimeText(time:Int){
+        if (time in 3..5) {
+            timetosholat.text = "Subuh"
+        } else if (time in 11..12) {
+            timetosholat.text = "Dzuhur"
+        } else if (time in 14..15) {
+            timetosholat.text = "Ashar"
+        } else if (time in 17..18) {
+            timetosholat.text = "Maghrib"
+        } else if (time == 19){
+            timetosholat.text = "Isya"
+        }
+    }
 
 }

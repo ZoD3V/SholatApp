@@ -35,11 +35,11 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         loading.startLoading()
         val handler = Handler()
         handler.postDelayed({ loading.isDismiss() },2000)
-        backtoh.setOnClickListener {
-            val i = Intent(this, MainActivity::class.java)
-            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            startActivity(i)
-        }
+//        backtoh.setOnClickListener {
+//            val i = Intent(this, MainActivity::class.java)
+//            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+//            startActivity(i)
+//        }
 
         //hide status bar
         window

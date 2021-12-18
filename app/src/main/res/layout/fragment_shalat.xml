@@ -1,1121 +1,1079 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6F8BC"
+    android:background="#FAFDFF"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E5FAFF"
         android:elevation="10dp"
-        app:elevation="10dp"
-        android:translationZ="90dp">
+        android:gravity="top">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_detail"
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="#B9D566">
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@drawable/circle_3"
+                android:layout_gravity="left|top"
+                android:translationY="-70dp"
+                android:translationX="-50dp"/>
+            <View
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle_2"
+                android:layout_gravity="right|bottom"
+                android:translationY="70dp"
+                android:translationX="10dp"/>
+            <View
+                android:layout_width="106dp"
+                android:layout_height="106dp"
+                android:background="@drawable/circle_1"
+                android:layout_gravity="right|bottom"
+                android:translationY="51dp"
+                android:translationX="57dp"/>
 
-            <FrameLayout
+            <LinearLayout
+                android:layout_gravity="center"
+                android:paddingRight="50dp"
+                android:paddingVertical="15dp"
+                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/backtohsh"
-                    app:tint="@color/white"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_arrow"/>
-                <TextView
-                    android:id="@+id/tvHeader"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="35dp"
-                    android:fontFamily="@font/backslash"
-                    android:text="Dzikir Shalat"
+
+                    app:tint="@color/black"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrows"/>
+                <ImageView
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="28dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/shalat"
                     />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir Shalat"
+                        android:textSize="23dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:text="Hasan Al-hamid"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            </FrameLayout>
+        </FrameLayout>
 
-        </androidx.appcompat.widget.Toolbar>
+
 
     </com.google.android.material.appbar.AppBarLayout>
-
     <ScrollView
+        android:layout_below="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginTop="68dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar"
+            android:paddingHorizontal="25dp"
             android:orientation="vertical">
+            <LinearLayout
 
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.8"
-                android:src="@drawable/bismilah"
-                app:tint="@color/black" />
-
-            <com.google.android.material.card.MaterialCardView
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ayat Kursi"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ، لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيم"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="“Allah tidak ada Ilah (yang berhak diibadahi) melainkan Dia Yang Hidup Kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang ada di langit dan di bumi. Tidak ada yang dapat memberi syafa’at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang (berada) dihadapan mereka, dan dibelakang mereka dan mereka tidak mengetahui apa-apa dari Ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, Allah Mahatinggi lagi Mahabesar.”"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+            <LinearLayout
 
+                android:paddingTop="30dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:id="@+id/tvArabic"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ، لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:id="@+id/tvTerjemahan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="“Allah tidak ada Ilah (yang berhak diibadahi) melainkan Dia Yang Hidup Kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang ada di langit dan di bumi. Tidak ada yang dapat memberi syafa’at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang (berada) dihadapan mereka, dan dibelakang mereka dan mereka tidak mengetahui apa-apa dari Ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, Allah Mahatinggi lagi Mahabesar.”"
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/semibold"
-                        android:textAlignment="center"
-                        android:textSize="19dp"
-                        android:lineHeight="35dp"
-                        android:text="قُلْ هُوَ اللَّهُ أَحَدٌ  ﴿١﴾  اللَّهُ الصَّمَدُ  ﴿٢﴾  لَمْ يَلِدْ وَلَمْ يُولَدْ  ﴿٣﴾  وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ  ﴿٤﴾"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Surat Al - Ikhlas"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="25dp"
-                        android:text="(1) Katakanlah: Dialah Allah Yang Maha Esa. (2) Allah adalah Ilah yang bergantung kepada-Nya segala urusan. (3) Dia tidak beranak dan tiada pula diperanakkan. (4) Dan tidak ada seorang pun yang setara dengan Dia."
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semibold"
+                    android:lineHeight="30dp"
+                    android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="قُلْ هُوَ اللَّهُ أَحَدٌ  ﴿١﴾  اللَّهُ الصَّمَدُ  ﴿٢﴾  لَمْ يَلِدْ وَلَمْ يُولَدْ  ﴿٣﴾  وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ  ﴿٤﴾"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.02"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="(1) Katakanlah: Dialah Allah Yang Maha Esa. (2) Allah adalah Ilah yang bergantung kepada-Nya segala urusan. (3) Dia tidak beranak dan tiada pula diperanakkan. (4) Dan tidak ada seorang pun yang setara dengan Dia."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+            <LinearLayout
+
+                android:paddingTop="30dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/semibold"
-                        android:textAlignment="center"
-                        android:textSize="19dp"
-                        android:lineHeight="35dp"
-                        android:text="قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ  ﴿١﴾  مِن شَرِّ مَا خَلَقَ  ﴿٢﴾  وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِن شَرِّ النَّفَّاثَاتِ فِى الْعُقَدِ  ﴿٤﴾  وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Surat Al - Falaq"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="25dp"
-                        android:text="(1) Katakanlah: Aku berlindung kepada Rabb yang menguasai Subuh. (2) Dari kejahatan makhluk-Nya. (3) Dan dari kejahatan malam apabila telah gelap gulita. (4) Dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul. (5) Dan dari kejahatan orang yang dengki apabila ia dengki."
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/semibold"
+                    android:lineHeight="30dp"
+                    android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ  ﴿١﴾  مِن شَرِّ مَا خَلَقَ  ﴿٢﴾  وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِن شَرِّ النَّفَّاثَاتِ فِى الْعُقَدِ  ﴿٤﴾  وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.02"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="(1) Katakanlah: Aku berlindung kepada Rabb yang menguasai Subuh. (2) Dari kejahatan makhluk-Nya. (3) Dan dari kejahatan malam apabila telah gelap gulita. (4) Dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul. (5) Dan dari kejahatan orang yang dengki apabila ia dengki."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="30dp"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
+                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/semibold"
-                        android:textAlignment="center"
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Surat Al - Annas"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
                         android:textSize="19dp"
-                        android:lineHeight="35dp"
-                        android:text="قُلْ أَعُوذُ بِرَبِّ النَّاسِ  ﴿١﴾  مَلِكِ النَّاسِ  ﴿٢﴾  إِلَـٰهِ النَّاسِ ﴿٣﴾ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ  ﴿٤﴾  الَّذِى يُوَسْوِسُ فِى صُدُورِ النَّاسِ  ﴿٥﴾  مِنَ الْجِنَّةِ وَالنَّاسِ  ﴿٦﴾"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="25dp"
-                        android:text="(1) Katakanlah: Aku berlindung kepada Rabb yang menguasai Subuh. (2) Dari kejahatan makhluk-Nya. (3) Dan dari kejahatan malam apabila telah gelap gulita. (4) Dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul. (5) Dan dari kejahatan orang yang dengki apabila ia dengki."
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/amiribold"
+                    android:lineHeight="40dp"
+                    android:text="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:letterSpacing="0.1"
+                    android:lineHeight="35dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="قُلْ أَعُوذُ بِرَبِّ النَّاسِ  ﴿١﴾  مَلِكِ النَّاسِ  ﴿٢﴾  إِلَـٰهِ النَّاسِ ﴿٣﴾ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ  ﴿٤﴾  الَّذِى يُوَسْوِسُ فِى صُدُورِ النَّاسِ  ﴿٥﴾  مِنَ الْجِنَّةِ وَالنَّاسِ  ﴿٦﴾"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.02"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="(1) Katakanlah: Aku berlindung kepada Rabb yang menguasai Subuh. (2) Dari kejahatan makhluk-Nya. (3) Dan dari kejahatan malam apabila telah gelap gulita. (4) Dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul. (5) Dan dari kejahatan orang yang dengki apabila ia dengki."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَـٰهَ إِلاَّ اللَّهُ، وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِيْ هَـٰذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا فِيْ هَـٰذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوْذُ بِكَ مِنَ الْكَسَلِ وَسُوْءِ الْكِبَرِ، رَبِّ أَعُوْذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Kami telah memasuki waktu pagi dan kerajaan hanya milik Allah, segala puji bagi Allah. Tidak ada sesembahan yang berhak disembah kecuali Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dan Dia Maha Kuasa atas segala sesuatu. Hai Tuhan, aku mohon kepada-Mu kebaikan di hari ini dan kebaikan sesudahnya. Aku berlindung kepadaMu dari kejahatan hari ini dan kejahatan sesudahnya. Wahai Tuhan, aku berlindung kepadaMu dari kemalasan dan kejelekan di hari tua. Wahai Tuhan, aku berlindung kepadaMu dari siksaan di Neraka dan kubur."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+            <LinearLayout
 
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوْتُ، وَإِلَيْكَ النُّشُوْرُ"  />                      android:textAlignment="center"
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, dengan rahmat dan pertolonganMu kami memasuki waktu pagi, dan dengan rahmat dan pertolonganMu kami memasuki waktu sore. Dengan rahmat dan pertolonganMu kami hidup dan dengan kehendakMu kami mati. Dan kepadaMu kebangkitan (bagi semua makhluk)."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sayyidul istighfar"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ أَنْتَ رَبِّيْ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ، خَلَقْتَنِيْ، وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوْءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوْبَ إِلاَّ أَنْتَ"          />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, Engkau adalah Tuhanku, tidak ada sesembahan yang berhak disembah kecuali Engkau, Engkaulah yang menciptakan aku. Aku adalah hambaMu. Aku akan setia pada perjanjianku denganMu semampuku. Aku berlindung kepadaMu dari kejelekan yang kuperbuat. Aku mengakui nikmatMu kepadaku dan aku mengakui dosaku, oleh karena itu, ampunilah aku. Sesungguhnya tiada yang mengampuni dosa kecuali Engkau."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَـٰهَ إِلاَّ اللَّهُ، وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ. رَبِّ أَسْأَلُكَ خَيْرَ مَا فِيْ هَـٰذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوْذُ بِكَ مِنْ شَرِّ مَا فِيْ هَـٰذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوْذُ بِكَ مِنَ الْكَسَلِ وَسُوْءِ الْكِبَرِ، رَبِّ أَعُوْذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Kami telah memasuki waktu pagi dan kerajaan hanya milik Allah, segala puji bagi Allah. Tidak ada sesembahan yang berhak disembah kecuali Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dan Dia Maha Kuasa atas segala sesuatu. Hai Tuhan, aku mohon kepada-Mu kebaikan di hari ini dan kebaikan sesudahnya. Aku berlindung kepadaMu dari kejahatan hari ini dan kejahatan sesudahnya. Wahai Tuhan, aku berlindung kepadaMu dari kemalasan dan kejelekan di hari tua. Wahai Tuhan, aku berlindung kepadaMu dari siksaan di Neraka dan kubur."                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ عَافِنِيْ فِيْ بَدَنِيْ، اَللَّهُمَّ عَافِنِيْ فِيْ سَمْعِيْ، اَللَّهُمَّ عَافِنِيْ فِيْ بَصَرِيْ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ. اَللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، اَللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, selamatkan tubuhku (dari penyakit dan yang tidak aku inginkan). Ya Allah, selamatkan pendengaranku (dari penyakit dan maksiat atau sesuatu yang tidak aku inginkan). Ya Allah, selamatkan penglihatanku, tidak ada sesembahan yang berhak disembah kecuali Engkau. Ya Allah, sesungguhnya aku berlindung kepadaMu dari kekufuran dan kefakiran. Ya Allah, aku berlindung kepadaMu dari siksa kubur, tidak ada sesembahan yang berhak disembah kecuali Engkau. "/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اَللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اَللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اَللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, sesungguhnya aku memohon maaf (ampunan) dan keselamatan di dunia dan akhirat. Ya Allah, sesungguhnya aku memohon maaf (ampunan) dan keselamatan dalam agama, dunia, keluarga dan hartaku. Ya Allah, tutupilah auratku (aurat badan, cacat, aib dan sesuatu yang tidak layak dilihat orang) dan tenteramkanlah aku dari rasa takut. Ya Allah, peliharalah aku dari muka, belakang, kanan, kiri dan atasku. Aku berlindung dengan kebesaranMu, agar aku tidak disambar dari bawahku (oleh ulat, tenggelam atau ditelan bumi dan lain-lain)."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
 
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَاْلأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيْكَهُ، أَشْهَدُ أَنْ لاَ إِلَـٰهَ إِلاَّ أَنْتَ، أَعُوْذُ بِكَ مِنْ شَرِّ نَفْسِيْ، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ"                        />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, yang Maha Mengetahui yang ghaib dan yang nyata, wahai Tuhan pencipta langit dan bumi, Tuhan segala sesuatu dan yang merajainya. Aku bersaksi bahwa tidak ada sesembahan yang berhak disembah kecuali Engkau. Aku berlindung kepadaMu dari kejahatan diriku, setan dan balatentaranya, dan aku (berlindung kepadaMu) dari berbuat kejelekan terhadap diriku atau mendorongnya kepada seorang muslim."      />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:text="اَللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوْتُ، وَإِلَيْكَ النُّشُوْرُ"                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Ya Allah, dengan rahmat dan pertolonganMu kami memasuki waktu pagi, dan dengan rahmat dan pertolonganMu kami memasuki waktu sore. Dengan rahmat dan pertolonganMu kami hidup dan dengan kehendakMu kami mati. Dan kepadaMu kebangkitan (bagi semua makhluk)."
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="بِسْمِ اللهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي اْلأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيْعُ الْعَلِيْمُ"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Dengan nama Allah, yang tidak akan berbahaya dengan namaNya, segala sesuatu di bumi dan langit, Dia-lah Yang Maha Mendengar lagi Maha Mengetahui."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="رَضِيْتُ بِاللَّهِ رَبًّا، وَبِاْلإِسْلاَمِ دِيْنًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّاُ"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Aku rela Allah sebagai Tuhanku, Islam sebagai agamaku dan Muhammad shallallahu 'alaihi wa sallam sebagai nabiku (yang diutus oleh Allah). "/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
 
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="يَا حَيُّ يَا قَيُّوْمُ بِرَحْمَتِكَ أَسْتَغِيْثُ، أَصْلِحْ لِيْ شَأْنِيْ كُلَّهُ، وَلاَ تَكِلْنِيْ إِلَى نَفْسِيْ طَرْفَةَ عَيْنٍ"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Wahai Tuhan Yang Maha Hidup, wahai Tuhan Yang Berdiri Sendiri (tidak butuh segala sesuatu), dengan rahmat-Mu aku minta pertolongan, perbaikilah segala urusanku, dan jangan Kau serahkan kepadaku meskipun sekejap mata (tanpa mendapat pertolongan dariMu)."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ، وَعَلَى كَلِمَةِ اْلإِخْلاَصِ، وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ، حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنٍَ"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Di waktu pagi kami berada di atas fitrah Islam, kalimat ikhlas, agama Nabi kami Muhammad, dan agama ayah kami Ibrahim, yang berdiri di atas jalan yang lurus, muslim dan tidak tergolong orang-orang musyrik."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:text="اَللَّهُمَّ أَنْتَ رَبِّيْ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ، خَلَقْتَنِيْ، وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوْءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوْءُ لَكَ بِذَنْبِيْ، فَاغْفِرْ لِيْ، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوْبَ إِلاَّ أَنْتَ"                        android:textColor="@color/black"
-                        android:textSize="20dp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 1 kali, 10 kali atau 100 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Ya Allah, Engkau adalah Tuhanku, tidak ada sesembahan yang berhak disembah kecuali Engkau, Engkaulah yang menciptakan aku. Aku adalah hambaMu. Aku akan setia pada perjanjianku denganMu semampuku. Aku berlindung kepadaMu dari kejelekan yang kuperbuat. Aku mengakui nikmatMu kepadaku dan aku mengakui dosaku, oleh karena itu, ampunilah aku. Sesungguhnya tiada yang mengampuni dosa kecuali Engkau."
-                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="لاَ إِلَـهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌُُ"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Tidak ada sesembahan yang berhak disembah kecuali Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dan Dia Maha Kuasa atas segala sesuatu."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="اَللَّهُمَّ عَافِنِيْ فِيْ بَدَنِيْ، اَللَّهُمَّ عَافِنِيْ فِيْ سَمْعِيْ، اَللَّهُمَّ عَافِنِيْ فِيْ بَصَرِيْ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ. اَللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، اَللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لاَ إِلَـٰهَ إِلاَّ أَنْتَ"
-                        android:textSize="20dp" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 3 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 3x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Ya Allah, selamatkan tubuhku (dari penyakit dan yang tidak aku inginkan). Ya Allah, selamatkan pendengaranku (dari penyakit dan maksiat atau sesuatu yang tidak aku inginkan). Ya Allah, selamatkan penglihatanku, tidak ada sesembahan yang berhak disembah kecuali Engkau. Ya Allah, sesungguhnya aku berlindung kepadaMu dari kekufuran dan kefakiran. Ya Allah, aku berlindung kepadaMu dari siksa kubur, tidak ada sesembahan yang berhak disembah kecuali Engkau. "                        android:textAlignment="center"
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهُِ"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Maha Suci Allah, aku memuji-Nya sebanyak makhluk-Nya, sesuai keridhaan-Nya, seberat timbangan arasy-Nya dan sebanyak tinta (yang menulis) kalimat-Nya."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dzikir"
+                    android:textAlignment="textEnd"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="19dp"
+                    android:textColor="#70000000"/>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلاً مُتَقَبَّلاًٍَ"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Ya Allah, sesungguhnya aku memohon kepadaMu ilmu yang bermanfaat, rizki yang halal dan amal yang diterima."/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
 
+            <LinearLayout
+
+                android:paddingTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="اَللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اَللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اَللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اَللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي"                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 100 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:textAlignment="center"
-                        android:text="Ya Allah, sesungguhnya aku memohon maaf (ampunan) dan keselamatan di dunia dan akhirat. Ya Allah, sesungguhnya aku memohon maaf (ampunan) dan keselamatan dalam agama, dunia, keluarga dan hartaku. Ya Allah, tutupilah auratku (aurat badan, cacat, aib dan sesuatu yang tidak layak dilihat orang) dan tenteramkanlah aku dari rasa takut. Ya Allah, peliharalah aku dari muka, belakang, kanan, kiri dan atasku. Aku berlindung dengan kebesaranMu, agar aku tidak disambar dari bawahku (oleh ulat, tenggelam atau ditelan bumi dan lain-lain)."
-                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"/>
 
-            <com.google.android.material.card.MaterialCardView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Maha suci Allah, aku memuji-Nya"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:paddingTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
+                android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
+                    android:orientation="horizontal">
                     <TextView
-
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textSize="20dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="اَللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَاوَاتِ وَاْلأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيْكَهُ، أَشْهَدُ أَنْ لاَ إِلَـٰهَ إِلاَّ أَنْتَ، أَعُوْذُ بِكَ مِنْ شَرِّ نَفْسِيْ، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِيْ سُوْءًا، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ"                        />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:text="Dibaca 100 kali"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:textAlignment="center"
-                        android:text="Ya Allah, yang Maha Mengetahui yang ghaib dan yang nyata, wahai Tuhan pencipta langit dan bumi, Tuhan segala sesuatu dan yang merajainya. Aku bersaksi bahwa tidak ada sesembahan yang berhak disembah kecuali Engkau. Aku berlindung kepadaMu dari kejahatan diriku, setan dan balatentaranya, dan aku (berlindung kepadaMu) dari berbuat kejelekan terhadap diriku atau mendorongnya kepada seorang muslim."                        android:textColor="#242424"
-                        android:textSize="14dp" />
+                        android:textSize="12dp"
+                        android:textColor="#70000000"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dzikir"
+                        android:textAlignment="textEnd"
+                        android:layout_marginBottom="23dp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="19dp"
+                        android:textColor="#70000000"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
+                <TextView
+                    android:letterSpacing="0.03"
+                    android:lineHeight="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
+                    android:fontFamily="@font/amiribold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="30dp"
+                    android:text="أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ"/>
 
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="بِسْمِ اللهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي اْلأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيْعُ الْعَلِيْمُ"/>
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 3x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Dengan nama Allah, yang tidak akan berbahaya dengan namaNya, segala sesuatu di bumi dan langit, Dia-lah Yang Maha Mendengar lagi Maha Mengetahui."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="رَضِيْتُ بِاللَّهِ رَبًّا، وَبِاْلإِسْلاَمِ دِيْنًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّاُ"/>
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 3x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Aku rela Allah sebagai Tuhanku, Islam sebagai agamaku dan Muhammad shallallahu 'alaihi wa sallam sebagai nabiku (yang diutus oleh Allah). "                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="@color/black"
+                    android:letterSpacing="0.05"
+                    android:textSize="15dp"
+                    android:textAlignment="center"
+                    android:text="Aku memohon ampun kepada Allah dan bertobat kepada-Nya"/>
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="يَا حَيُّ يَا قَيُّوْمُ بِرَحْمَتِكَ أَسْتَغِيْثُ، أَصْلِحْ لِيْ شَأْنِيْ كُلَّهُ، وَلاَ تَكِلْنِيْ إِلَى نَفْسِيْ طَرْفَةَ عَيْنٍ"/>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Wahai Tuhan Yang Maha Hidup, wahai Tuhan Yang Berdiri Sendiri (tidak butuh segala sesuatu), dengan rahmat-Mu aku minta pertolongan, perbaikilah segala urusanku, dan jangan Kau serahkan kepadaku meskipun sekejap mata (tanpa mendapat pertolongan dariMu)."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="أَصْبَحْنَا عَلَى فِطْرَةِ اْلإِسْلاَمِ، وَعَلَى كَلِمَةِ اْلإِخْلاَصِ، وَعَلَى دِيْنِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيْمَ، حَنِيْفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِيْنٍَ"/>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Di waktu pagi kami berada di atas fitrah Islam, kalimat ikhlas, agama Nabi kami Muhammad, dan agama ayah kami Ibrahim, yang berdiri di atas jalan yang lurus, muslim dan tidak tergolong orang-orang musyrik."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="لاَ إِلَـهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌُُ"/>
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Tidak ada sesembahan yang berhak disembah kecuali Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan bagi-Nya pujian. Dan Dia Maha Kuasa atas segala sesuatu."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:layout_marginTop="10dp"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 1x, 10x atau 100x"
-                        android:textSize="20dp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهُِ"/>
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 3x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Maha Suci Allah, aku memuji-Nya sebanyak makhluk-Nya, sesuai keridhaan-Nya, seberat timbangan arasy-Nya dan sebanyak tinta (yang menulis) kalimat-Nya."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="اَللَّهُمَّ إِنِّيْ أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلاً مُتَقَبَّلاًٍَ"/>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Ya Allah, sesungguhnya aku memohon kepadaMu ilmu yang bermanfaat, rizki yang halal dan amal yang diterima."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"/>
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 100x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Maha Suci Allah, aku memuji-Nya sebanyak makhluk-Nya, sesuai keridhaan-Nya, seberat timbangan arasy-Nya dan sebanyak tinta (yang menulis) kalimat-Nya."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="100dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="18dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/semibold"
-                        android:lineHeight="30dp"
-                        android:textAlignment="center"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:text="أَسْتَغْفِرُ اللَّهَ وَأَتُوْبُ إِلَيْهِ"/>
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:text="dibaca 100x"
-                        android:textSize="20dp" />
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_marginVertical="8dp"
-                        android:background="@color/black" />
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppinsmedium"
-                        android:lineHeight="23dp"
-                        android:text="Maha Suci Allah, aku memuji-Nya sebanyak makhluk-Nya, sesuai keridhaan-Nya, seberat timbangan arasy-Nya dan sebanyak tinta (yang menulis) kalimat-Nya."                        android:textColor="#242424"
-                        android:textSize="14dp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
+                    android:layout_height="1dp"
+                    android:background="#30000000"
+                    android:layout_marginTop="25dp"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center|end">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_stop"
-            app:backgroundTint="#7E9D26"
-            app:elevation="4dp"
-            app:maxImageSize="30dp"
-            app:tint="@color/white" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_play"
-            app:backgroundTint="#7E9D26"
-            app:elevation="4dp"
-            app:maxImageSize="30dp"
-            app:tint="@color/white" />
-
-    </FrameLayout>
-</FrameLayout>
+</RelativeLayout>

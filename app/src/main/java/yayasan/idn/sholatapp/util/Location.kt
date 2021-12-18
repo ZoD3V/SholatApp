@@ -32,6 +32,8 @@ class Location(val aL:Activity):AppCompatActivity() {
         val geocoder = Geocoder(aL, Locale.getDefault())
         var addresses: List<Address>
         var address = ""
+        var subaddresses: List<Address>
+        var subaddress = ""
 
         LocationServices.getFusedLocationProviderClient(aL)
             .requestLocationUpdates(locationRequest, object : LocationCallback() {
@@ -45,12 +47,14 @@ class Location(val aL:Activity):AppCompatActivity() {
                         val longitude = locationResult.locations[locIndex].longitude
                         val altitude = locationResult.locations[locIndex].altitude
                         try {
-                            addresses = geocoder.getFromLocation(latitude, longitude, 1)
+                            addresses = geocoder.getFromLocation(latitude, longitude, 3)
                             address = addresses[0].subLocality
+                            subaddresses = geocoder.getFromLocation(latitude, longitude, 3)
+                            subaddress = subaddresses[0].adminArea
                         }catch (ignored:RuntimeException){
                         }
                         val prayer = PrayerHelper(aL)
-                        prayer.getWeather(latitude.toString(),longitude.toString(),address)
+                        prayer.getWeather(latitude.toString(),longitude.toString(),address,subaddress)
                         prayer.getSholat(latitude.toString(),longitude.toString(),altitude.toString())
                     }
                 }

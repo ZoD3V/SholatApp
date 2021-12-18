@@ -38,6 +38,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_datetoshow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/semibold"
@@ -104,7 +105,7 @@
                                 android:id="@+id/temp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="30°"
+                                android:text="--"
                                 android:textColor="@color/white"
                                 android:textSize="25dp"
                                 android:fontFamily="@font/semibold"/>
@@ -121,10 +122,11 @@
                     </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppinsbold"
-                    android:text="11 : 11"
+                    android:text="-- : --"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="30dp" />
@@ -148,7 +150,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/regular"
-                        android:text="Bogor , Jawa Barat"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+                    <TextView
+                        android:id="@+id/subcity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/regular"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="14dp" />
@@ -174,10 +183,10 @@
                 android:textSize="17dp" />
 
             <TextView
+                android:id="@+id/timetosholat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/semibold"
-                android:text="Dzuhur"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
@@ -208,7 +217,7 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"
@@ -247,12 +256,12 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"
                         android:textColor="@color/black"
-                        android:text="SYURUK"/>
+                        android:text="TERBIT"/>
                     <TextView
                         android:id="@+id/syuruk"
                         android:layout_weight="2"
@@ -286,7 +295,7 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"
@@ -325,7 +334,7 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"
@@ -364,7 +373,7 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"
@@ -403,9 +412,9 @@
 
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
-                        android:textSize="15dp"
+                        android:textSize="14dp"
                         android:fontFamily="@font/semibold"
                         android:textColor="@color/black"
                         android:text="MAGHRIB"/>
@@ -429,7 +438,7 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_marginBottom="21dp"
+                android:layout_marginBottom="80dp"
                 app:cardBackgroundColor="#E5FAFF"
                 app:cardCornerRadius="12dp"
                 android:layout_height="wrap_content">
@@ -439,10 +448,9 @@
                     android:paddingHorizontal="22dp"
                     android:paddingBottom="19dp"
                     android:paddingTop="19dp"
-
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="66dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp"
                         android:fontFamily="@font/semibold"

@@ -7,16 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".dzikir.HomePrayerActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabBackground="@color/kuning"
-        app:tabTextColor="@color/black"
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:tabBackground="@color/kuning"-->
+<!--        app:tabTextColor="@color/black"-->
 
-        android:translationZ="999dp"
-        android:layout_marginTop="55dp"
-        app:tabSelectedTextColor="@color/white"
-        android:id="@+id/tab_layout"/>
+<!--        android:translationZ="999dp"-->
+<!--        android:layout_marginTop="55dp"-->
+<!--        app:tabSelectedTextColor="@color/white"-->
+<!--        android:id="@+id/tab_layout"/>-->
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"

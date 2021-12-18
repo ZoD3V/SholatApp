@@ -52,9 +52,13 @@ class PrayerHelper(private val aP:Activity) {
         val isya = this.aP.findViewById<TextView>(R.id.isya)
         isya.text = response.getJSONObject("results").getJSONArray("datetime")
             .getJSONObject(0).getJSONObject("times").getString("Isha")
+
+        val syuruk = this.aP.findViewById<TextView>(R.id.syuruk)
+        syuruk.text = response.getJSONObject("results").getJSONArray("datetime")
+            .getJSONObject(0).getJSONObject("times").getString("Sunrise")
     }
 
-    fun getWeather(lat: String?, long: String?,city:String?) {
+    fun getWeather(lat: String?, long: String?,city:String?,subCity:String?) {
         val apiKey = "732059b1c20f74eee6738e66b90b1997"
         val queue = Volley.newRequestQueue(aP)
         val urlWeather = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&lang=id"
@@ -62,7 +66,7 @@ class PrayerHelper(private val aP:Activity) {
         val jsonRequest = JsonObjectRequest(
             Request.Method.GET, urlWeather,null,
             { response ->
-                setValuesWeather(response,city)
+                setValuesWeather(response,city,subCity)
             },
             { Toast.makeText(aP,"Failed Show Data Weather",Toast.LENGTH_LONG).show() })
         queue.cache.clear()
@@ -70,10 +74,13 @@ class PrayerHelper(private val aP:Activity) {
     }
 
     @SuppressLint("SetTextI18n")
-    fun setValuesWeather(response: JSONObject,cityName:String?) {
+    fun setValuesWeather(response: JSONObject,cityName:String?,subCityName:String?) {
 
         val city = this.aP.findViewById<TextView>(R.id.city)
-        city.text = cityName
+        city.text = "$cityName, "
+
+        val subCity = this.aP.findViewById<TextView>(R.id.subcity)
+        subCity.text = subCityName
 
         val weather = this.aP.findViewById<TextView>(R.id.weather)
         weather.text=response.getJSONArray("weather").getJSONObject(0).getString("description")
