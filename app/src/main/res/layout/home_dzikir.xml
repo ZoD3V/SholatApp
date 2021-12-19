@@ -96,6 +96,8 @@
         android:orientation="vertical"
         android:layout_below="@id/frame">
         <androidx.cardview.widget.CardView
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:id="@+id/dzikirpagi"
             android:layout_width="match_parent"
             app:cardBackgroundColor="#35D1F6"
@@ -168,6 +170,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:id="@+id/dzikirpetang"
             android:layout_width="match_parent"
             app:cardBackgroundColor="#35D1F6"
@@ -239,6 +243,8 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:id="@+id/dzikirsholat"
             android:layout_width="match_parent"
             app:cardBackgroundColor="#35D1F6"

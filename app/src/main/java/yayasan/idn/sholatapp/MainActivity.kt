@@ -40,22 +40,27 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setting_location.setOnClickListener {
+            startActivityForResult(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0);
+        }
+
         val animation = AnimationUtils.loadAnimation(this, R.anim.explosion_animation).apply {
             duration = 700
             interpolator = AccelerateDecelerateInterpolator()
         }
 
-        binding.fab.setOnClickListener{
-
-            binding.fab.isVisible = false
-            binding.circle.isVisible = true
-            binding.circle.startAnimation(animation) {
-                // display your fragment
-//                binding.root.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_700))
-                binding.circle.isVisible = false
-                startActivity(Intent(this,WeatherActivity::class.java))
-            }
-        }
+//        binding.fab.setOnClickListener{
+//
+//            binding.fab.isVisible = false
+//            binding.circle.isVisible = true
+//            binding.circle.startAnimation(animation) {
+//                // display your fragment
+////                binding.root.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_700))
+//                binding.circle.isVisible = false
+//                startActivity(Intent(this,WeatherActivity::class.java))
+//            }
+//        }
 
         //call loading item
         val loading = LoadingDialog(this)
@@ -98,6 +103,7 @@ class MainActivity : AppCompatActivity() {
         val timenow = calendar.get(Calendar.HOUR_OF_DAY)
 
         tv_datetoshow.text = "$day, $date $month"
+        tv_datetoshow.getText().toString().toLowerCase()
 
         val currentTime = LocalDateTime.now()
         val timeNow = currentTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT))
@@ -122,6 +128,8 @@ class MainActivity : AppCompatActivity() {
             timetosholat.text = "Maghrib"
         } else if (time == 19){
             timetosholat.text = "Isya"
+        }else{
+            timetosholat.text = "-----"
         }
     }
 

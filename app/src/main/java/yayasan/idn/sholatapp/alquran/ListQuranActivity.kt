@@ -3,6 +3,8 @@ package yayasan.idn.sholatapp.alquran
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
@@ -20,10 +22,11 @@ import yayasan.idn.sholatapp.MainActivity
 import yayasan.idn.sholatapp.R
 import yayasan.idn.sholatapp.adapter.SurahAdapter
 import yayasan.idn.sholatapp.apiquran.Api
+import yayasan.idn.sholatapp.databinding.ActivityMainBinding
 import yayasan.idn.sholatapp.model.ModelSurah
 import yayasan.idn.sholatapp.util.LoadingDialog
 
-class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
+class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectDataX{
     var surahAdapter: SurahAdapter? = null
     var modelSurah: MutableList<ModelSurah> = ArrayList()
 
@@ -35,11 +38,11 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         loading.startLoading()
         val handler = Handler()
         handler.postDelayed({ loading.isDismiss() },2000)
-//        backtoh.setOnClickListener {
-//            val i = Intent(this, MainActivity::class.java)
-//            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//            startActivity(i)
-//        }
+        backtoh.setOnClickListener {
+            val i = Intent(this, MainActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(i)
+        }
 
         //hide status bar
         window
@@ -91,7 +94,7 @@ class ListQuranActivity : AppCompatActivity(),SurahAdapter.onSelectData{
         rvSurah!!.adapter = surahAdapter
     }
 
-    override fun onSelected(modelSurah: ModelSurah) {
+    override fun onSelected(modelSurah: ModelSurah?) {
         val intent = Intent(this@ListQuranActivity, DetailActivity::class.java)
         intent.putExtra("detailSurah", modelSurah)
         startActivity(intent)

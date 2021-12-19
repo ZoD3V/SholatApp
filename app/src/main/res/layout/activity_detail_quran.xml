@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#FAFDFF"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <!--    <androidx.core.widget.NestedScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent">-->
@@ -117,34 +120,6 @@
 <!--        android:layout_height="wrap_content"/>-->
 <!--    </LinearLayout>-->
 <!--    </androidx.core.widget.NestedScrollView>-->
-<!--    <FrameLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|center|end">-->
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/fabStop"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="16dp"-->
-<!--            app:tint="@color/white"-->
-<!--            android:src="@drawable/ic_stop"-->
-<!--            app:backgroundTint="#4DA8BB"-->
-<!--            app:maxImageSize="30dp"-->
-<!--            app:elevation="4dp" />-->
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/fabPlay"-->
-<!--            app:tint="@color/white"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="16dp"-->
-<!--            app:maxImageSize="30dp"-->
-<!--            android:src="@drawable/ic_play"-->
-<!--            app:backgroundTint="#4DA8BB"-->
-<!--            app:elevation="4dp" />-->
-
-<!--    </FrameLayout>-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
@@ -240,5 +215,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bar"
         tools:listitem="@layout/list_detail_quran" />
+    </RelativeLayout>
 
-</RelativeLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center|end">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:tint="@color/white"
+                android:src="@drawable/ic_stop"
+                app:backgroundTint="#23B9DD"
+                app:maxImageSize="30dp"
+                app:elevation="4dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabPlay"
+                app:tint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:maxImageSize="30dp"
+                android:src="@drawable/ic_play"
+                app:backgroundTint="#23B9DD"
+                app:elevation="4dp" />
+
+        </FrameLayout>
+</FrameLayout>

@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvSurah"
     app:cardBackgroundColor="#35D1F6"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="15dp"
@@ -81,7 +83,8 @@
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-
+                    android:text="awokawok"
+                    android:layout_marginTop="4dp"
                     android:layout_marginRight="10dp"
                     android:fontFamily="@font/semibold" />
 

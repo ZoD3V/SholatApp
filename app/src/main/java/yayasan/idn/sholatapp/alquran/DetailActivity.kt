@@ -67,10 +67,8 @@ class DetailActivity : AppCompatActivity() {
             ayat = modelSurah!!.ayat
             audio = modelSurah!!.audio
             keterangan = modelSurah!!.keterangan
-
-//            fabStop.visibility = View.GONE
-//            fabPlay.visibility = View.VISIBLE
-
+            fabStop.visibility = View.GONE
+            fabPlay.visibility = View.VISIBLE
             //Set text
             tvTitle.text = nama
 //            tvSubTitle.text = arti
@@ -78,25 +76,25 @@ class DetailActivity : AppCompatActivity() {
 
             //get & play Audio
             val mediaPlayer = MediaPlayer()
-//            fabPlay.setOnClickListener(View.OnClickListener {
-//                try {
-//                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
-//                    mediaPlayer.setDataSource(audio)
-//                    mediaPlayer.prepare()
-//                    mediaPlayer.start()
-//                } catch (e: IOException) {
-//                    e.printStackTrace()
-//                }
-//                fabPlay.visibility = View.GONE
-//                fabStop.visibility = View.VISIBLE
-//            })
+            fabPlay.setOnClickListener(View.OnClickListener {
+                try {
+                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
+                    mediaPlayer.setDataSource(audio)
+                    mediaPlayer.prepare()
+                    mediaPlayer.start()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+                fabPlay.visibility = View.GONE
+                fabStop.visibility = View.VISIBLE
+            })
 
-//            fabStop.setOnClickListener(View.OnClickListener {
-//                mediaPlayer.stop()
-//                mediaPlayer.reset()
-//                fabPlay.visibility = View.VISIBLE
-//                fabStop.visibility = View.GONE
-//            })
+            fabStop.setOnClickListener(View.OnClickListener {
+                mediaPlayer.stop()
+                mediaPlayer.reset()
+                fabPlay.visibility = View.VISIBLE
+                fabStop.visibility = View.GONE
+            })
         }
         rvAyat.layoutManager = LinearLayoutManager(this)
         rvAyat.setHasFixedSize(true)
